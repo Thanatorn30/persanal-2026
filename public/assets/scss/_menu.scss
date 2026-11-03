@@ -1,0 +1,85 @@
+@import "_variables";
+@import "_mixins";
+
+#pMenu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 78px;
+  @include radiusCustom(20px, 20px, 0px, 0px);
+  background-color: $colorBgForegroundLight;
+  border-top: 1px solid $colorPrimaryLight;
+  .bMenu {
+    @include flexCenter(column);
+    gap: 4px;
+    position: relative;
+    &.active{
+      gap: 12px;
+      top: -13px;
+    }
+    .bgImg{
+      &.active {
+        position: relative;
+        border: 1px solid $colorPrimaryHover;
+        background-color: $colorPrimary;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+        padding: 8px;
+        @include radius(50px);
+        gap: 12px;
+        .menu1{
+          background-color: $colorWhite;
+        }
+        .menu2{
+          background-color: $colorWhite;
+        }
+        .menu3{
+          background-color: $colorWhite;
+        }
+        .menu4{
+          background-color: $colorWhite;
+        }
+        p {
+          color: $colorTypoSubtext2;
+        }
+      }
+      .menu1 {
+        @include mask("../img/ci/menu/ico-menu1.svg");
+        background-color: $colorTypoSubtext2;
+        width: 24px;
+        height: 24px;
+      }
+      .menu2 {
+        @include mask("../img/ci/menu/ico-menu2.svg");
+        background-color: $colorTypoSubtext2;
+        width: 24px;
+        height: 24px;
+      }
+      .menu3 {
+        @include mask("../img/ci/menu/ico-menu3.svg");
+        background-color: $colorTypoSubtext2;
+        width: 24px;
+        height: 24px;
+      }
+      .menu4 {
+        @include mask("../img/ci/menu/ico-menu4.svg");
+        background-color: $colorTypoSubtext2;
+        width: 24px;
+        height: 24px;
+      }
+    }
+    p {
+      color: $colorTypoSubtext2;
+      font-size: 10px;
+    }
+    &.active{
+      p {
+        color: $colorPrimary;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+section#pOtp {
+  padding: 40px 0;
+  // min-height: 60vh;
+
+  .bOtpMain {
+    display: flex;
+    justify-content: center;
+
+    .bOtp {
+      width: 100%;
+      padding: 0;
+
+      .bTitle {
+        text-align: center;
+        margin-bottom: 20px;
+
+        h2 {
+          @include fontSizeXL;
+        }
+
+        p {
+          @include fontSizeMD;
+        }
+      }
+
+      .bFrom {
+        .control-group {
+          &.otp {
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+            margin-bottom: 24px;
+
+            input[type="text"] {
+              max-width: 48px;
+              height: 48px;
+              text-align: center;
+              @include fontSizeXL;
+            }
+
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            /* Firefox */
+            input[type="number"] {
+              -moz-appearance: textfield;
+            }
+          }
+        }
+        .bCountTime {
+          color: $colorPrimaryDark;
+          margin-bottom: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            font-weight: 500;
+            margin: 0 5px;
+          }
+
+          &:before {
+            // content: "";
+            // display: block;
+            // margin-right: 5px;
+            // width: 14px;
+            // height: 14px;
+            // background: url(../img/ico-clock.svg) center center no-repeat;
+            // background-size: 100% auto;
+          }
+        }
+        .bTextSend {
+          margin-bottom: 36px;
+          @include fontSizeSM;
+          text-align: center;
+          color: #747474;
+
+          a {
+            color: $colorPrimary;
+            font-weight: 500;
+          }
+        }
+        .bText {
+          text-align: center;
+          @include fontSizeXS;
+
+          margin-bottom: 24px;
+          color: $colorPrimary;
+
+          a {
+            text-decoration: underline;
+          }
+
+          b {
+            color: $colorTypoBasetext;
+          }
+        }
+      }
+
+      .bBtn {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+
+        span {
+          @include fontSizeXS;
+
+          color: $colorPrimary;
+          text-align: center;
+          margin: 12px 0;
+        }
+        .btn{
+          max-width: 260px;
+          max-width: max-content;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

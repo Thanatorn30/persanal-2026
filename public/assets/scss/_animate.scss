@@ -1,0 +1,37 @@
+[data-animate],
+[data-animate2],
+[data-animate3] {
+  @include transitAnimate(0.5s, ease-in);
+  position: relative !important;
+  opacity: 0;
+  transform: translate(0, 0);
+  &[data-animate="top"],
+  &[data-animate2="top"],
+  &[data-animate3="top"] {
+    transform: translate(0, -30px);
+  }
+  &[data-animate="bottom"],
+  &[data-animate2="bottom"],
+  &[data-animate3="bottom"] {
+    transform: translate(0, 30px);
+  }
+  &[data-animate="left"],
+  &[data-animate2="left"],
+  &[data-animate3="left"] {
+    transform: translate(-30px, 0);
+  }
+  &[data-animate="right"],
+  &[data-animate2="right"],
+  &[data-animate3="right"] {
+    transform: translate(30px, 0);
+  }
+  &[data-animate="center"],
+  &[data-animate2="center"],
+  &[data-animate3="center"] {
+    transform: translate(0, 0);
+  }
+}
+.transit {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}

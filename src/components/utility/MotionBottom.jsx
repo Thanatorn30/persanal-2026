@@ -1,0 +1,76 @@
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+
+const MotionBottom = ({ 
+  children, 
+  delay = 0, 
+  duration = 0.8, 
+  distance = 50,
+  className = '',
+  triggerOnScroll = false,
+  threshold = 0.1,
+  triggerOnce = true,
+  rootMargin = '0px',
+  forceVisible = false,
+  ...props 
+}) => {
+  const [isVisible, setIsVisible] = useState(!triggerOnScroll || forceVisible);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    if (forceVisible) {
+      setIsVisible(true);
+      return;
+    }
+    
+    if (!triggerOnScroll || !elementRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            if (triggerOnce) {
+              observer.unobserve(entry.target);
+            }
+          } else if (!triggerOnce) {
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        threshold: threshold,
+        rootMargin: rootMargin
+      }
+    );
+
+    observer.observe(elementRef.current);
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, [triggerOnScroll, threshold, triggerOnce, rootMargin, forceVisible]);
+
+  return (
+    <motion.div
+      ref={elementRef}
+      initial={{ y: -distance, opacity: 0 }}
+      animate={isVisible ? { y: 0, opacity: 1 } : { y: -distance, opacity: 0 }}
+      transition={{
+        duration: duration,
+        ease: [0.25, 0.4, 0.25, 1],
+        delay: isVisible ? delay : 0
+      }}
+      className={className}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export default MotionBottom;

@@ -1,0 +1,695 @@
+@import "_variables";
+body {
+  position: relative;
+  &.openedMenu {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+header {
+  .bLang {
+    select {
+      option {
+        color: #2c3d92;
+      }
+    }
+  }
+  .hide-icon {
+    display: none !important;
+    @include screenS {
+      display: flex !important;
+    }
+  }
+  .bHeaderTop,
+  .bHeaderBottom {
+    background-color: $colorPrimary;
+    width: 100%;
+    .bHeader {
+      @include container;
+      @include transitAnimate;
+      @include tablet {
+        width: 100%;
+        padding: 24px;
+      }
+      z-index: 94035;
+      height: auto;
+      min-height: 64px;
+      // padding: 8px 0;
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      gap: 16px;
+      @include screenS {
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+      }
+      .bLogo {
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        &::before {
+          content: "";
+          background-image: url(../img/ci/menu/ico-logo-header.svg);
+          width: 46px;
+          height: 30px;
+          display: block;
+          cursor: pointer;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+      .bHamburger {
+        &::before {
+          content: "";
+          background-image: url(../img/ci/menu/icon-hamburger.svg);
+          width: 20px;
+          height: 20px;
+          display: block;
+          background-size: 100%;
+        }
+        @include screenS {
+          display: none;
+        }
+      }
+
+      .bInput {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        @include mobile {
+          display: none;
+        }
+        .searchIcon {
+          position: absolute;
+          left: 20px;
+          z-index: 99;
+          &::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            display: block;
+            background-image: url(../img/ci/menu/ico-search.svg);
+            background-size: contain;
+          }
+        }
+        input[type="text"] {
+          height: 40px;
+        }
+        input {
+          border-radius: 200px;
+          padding: 8px 20px 8px 64px;
+        }
+      }
+
+      .bMenuTop {
+        @include mobile {
+          margin-left: auto;
+        }
+        .helpDropdown {
+          @include mobile {
+            right: 0px;
+          }
+          position: absolute;
+          background-color: #fff;
+          top: 65px;
+          width: 300px;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          border-radius: 4px;
+          z-index: 100;
+        }
+
+        .helpDropdown {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          visibility: hidden;
+          transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out,
+            visibility 0.3s;
+        }
+
+        .helpDropdown.open {
+          max-height: 300px; /* Adjust based on your content */
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .helpDropdown ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .helpDropdown ul li {
+          padding-bottom: 8px;
+          margin: 5px 0;
+          border-bottom: 1px solid #d0d5dd;
+
+          &:last-child {
+            border: none;
+            padding-bottom: 0px;
+          }
+        }
+
+        .helpDropdown ul li a {
+          width: fit-content;
+          text-decoration: none;
+          font-size: 16px;
+          color: #1d2939;
+          &:hover {
+            color: $colorSecondary !important;
+          }
+          &.active {
+            font-weight: 700;
+          }
+        }
+        display: flex;
+        align-items: center;
+        @include screenS {
+          gap: 20px;
+        }
+        a {
+          font-size: 12px;
+          font-weight: 300;
+          width: 68px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #ffffff;
+          @include mobile {
+            font-size: 0;
+            width: 40px;
+          }
+          &.icon1,
+          .icon2,
+          .icon3,
+          .icon4 {
+            transition: transform 0.2s;
+            &::before {
+              content: "";
+              background-image: url(../img/ci/menu/ico-menuIcon1.svg);
+              display: block;
+              // margin-top: 4px;
+              width: 24px;
+              height: 24px;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+          &.icon2 {
+            &::before {
+              content: "";
+              background-image: url(../img/ci/menu/ico-menuIcon2.svg);
+              display: block;
+              width: 24px;
+              height: 24px;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+          &.icon3 {
+            &::before {
+              content: "";
+              position: relative;
+              background-image: url(../img/ci/menu/ico-menuIcon3.svg);
+              display: block;
+              width: 24px;
+              height: 24px;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+          &.icon4 {
+            &::before {
+              content: "";
+              background-image: url(../img/ci/menu/user-icon.svg);
+              display: block;
+              width: 24px;
+              height: 24px;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+          &.icon5 {
+            &::before {
+              content: "";
+              background-image: url(../img/ci/menu/icon-search.svg);
+              display: block;
+              width: 24px;
+              height: 24px;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+            @include screenS {
+              display: none;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            // transform: scale(1.1);
+          }
+        }
+        select {
+          width: auto;
+          border: none;
+          background: none;
+          color: #ffffff;
+          font-weight: 700;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .bHeaderBottom {
+    position: relative;
+    background-color: $colorBgForegroundDark;
+    z-index: 1;
+    @include mobile {
+      display: none;
+    }
+    .bHeader {
+      .bMenu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-left: 0px !important;
+        li {
+          list-style: none;
+          a {
+            width: auto;
+            @include fontSizeSM;
+            @include tablet {
+              @include fontSize2XS;
+            }
+            font-weight: 700;
+            line-height: normal;
+            color: $colorTypoSubtext1;
+          }
+        }
+        .bMenuAllProduct {
+          gap: 4px;
+          display: flex;
+          align-items: center;
+          p {
+            cursor: pointer;
+            font-weight: 700;
+            @include fontSizeSM;
+            @include tablet {
+              @include fontSize2XS;
+            }
+          }
+          &::before {
+            content: "";
+            background-image: url(../img/ui/menu/ico-burger.svg);
+            background-repeat: no-repeat;
+            display: block;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            @include tablet {
+              width: 10px;
+              height: 10px;
+            }
+          }
+          li {
+            p {
+              cursor: pointer;
+              @include fontSizeSM;
+              @include tablet {
+                @include fontSize2XS;
+              }
+            }
+          }
+        }
+        .bMenuDropdown {
+          .bHover {
+            p {
+              cursor: pointer;
+              &.normal {
+                height: 64px;
+                font-weight: 700;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              &.head {
+                height: 64px;
+                font-weight: 700;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+                &::after {
+                  content: "";
+                  display: block;
+                  width: 20px;
+                  height: 20px;
+                  background-image: url(../img/ci/promotion/ico-chev-down.svg);
+                }
+              }
+            }
+          }
+        }
+      }
+      .bLinkMenu {
+        a {
+          @include fontSizeSM;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-weight: 700;
+          color: $colorPrimary;
+          &:before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(../img/ui/menu/ico-organization.svg);
+          }
+        }
+      }
+    }
+  }
+  .bInfo {
+    &.default {
+      background-color: #ddd6fe;
+    }
+    width: 100%;
+    .bContent {
+      @include container;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        font-weight: 300;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0px;
+        gap: 8px;
+        &::after {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-image: url(../img/ui/pagiantion/ico-arrow-right.svg);
+        }
+      }
+      .dummy,
+      .closeIcon {
+        width: 20px;
+        height: 20px;
+      }
+      .closeIcon {
+        background-image: url(../img/ui/pagiantion/ico-close.svg);
+      }
+    }
+  }
+  .bSubmenu {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    background-color: #ffffff;
+    width: 100%;
+    top: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 108px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+
+    &.active {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .bContent {
+      padding: 20px 0;
+      // background-color: #fff;
+    }
+  }
+
+  .bSubmenu .bText {
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .bSubmenu .tLink {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bSubmenu {
+    .bContent {
+      display: flex;
+      padding: 40px 108px;
+      justify-content: center;
+      align-items: flex-start;
+
+      .bText {
+        p {
+          font-weight: 700;
+          font-size: 16px;
+        }
+        h3 {
+          color: #1d2939;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        a {
+          // color: #475467;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+          &:hover {
+            color: $colorSecondary;
+          }
+        }
+      }
+    }
+  }
+  #pSidemenu {
+    .slide-menu {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      background: #333;
+      transform: translateX(-100%); /* Hidden by default */
+      transition: transform 300ms ease-in-out;
+      z-index: 1000;
+    }
+    .slide-menu.open {
+      transform: translateX(0); /* Slide into view */
+    }
+
+    .slide-menu .slider {
+      @include container;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: -webkit-transform 300ms ease-in-out;
+      transition: transform 300ms ease-in-out;
+      transition: transform 300ms ease-in-out,
+        -webkit-transform 300ms ease-in-out;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      will-change: transform;
+    }
+
+    .slide-menu ul {
+      padding: 16px;
+      list-style: none;
+      position: relative;
+      width: 100%;
+      margin: 0;
+      gap: 16px;
+    }
+
+    .slide-menu ul ul {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      display: none;
+    }
+
+    .slide-menu ul a {
+      display: block;
+      padding: 12px 24px;
+      color: #1d2939;
+      text-decoration: none;
+    }
+
+    .slide-menu.no-transition,
+    .slide-menu.no-transition * {
+      transition: none !important;
+    }
+    .tTitle {
+      color: #1d2939;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .backeiei {
+      display: flex !important;
+      justify-content: space-between; // Space between the title and "ดูทั้งหมด"
+      align-items: center;
+      color: #2c3d92 !important;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      border-bottom: 1px solid #d0d5dd !important;
+
+      .all-items-link {
+        font-size: 14px; // Adjust the size for "ดูทั้งหมด"
+        color: #0089e4; // Example color for "ดูทั้งหมด", change as needed
+        text-decoration: underline;
+        font-weight: 400;
+      }
+    }
+    hr {
+      margin: 12px 0px 12px 0px;
+      background: #d0d5dd;
+    }
+    // a {
+    //   font-size: 14px;
+    // }
+    .bLink {
+      display: flex;
+      justify-content: space-between;
+
+      .bBrand {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 24px;
+        flex: 1 0 0;
+        align-self: stretch;
+        flex-wrap: wrap;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+    .controls {
+      display: flex;
+      justify-content: end;
+    }
+    .bLanguage {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .bContent {
+        display: flex;
+        .bLeft {
+          padding-right: 8px;
+        }
+        .bRight {
+          padding-left: 8px;
+          border-left: 1px solid #d0d5dd;
+        }
+      }
+      .language-option {
+        cursor: pointer;
+        color: #667085;
+      }
+
+      .language-option.active {
+        color: #2c3d92;
+      }
+    }
+    @media (max-width: 767px) {
+      main .btn {
+        width: 100%;
+        display: block;
+        margin: 8px 0;
+      }
+    }
+
+    .slide-menu {
+      background: #fcfcfd;
+      color: #1d2939;
+    }
+
+    .slide-menu .slider {
+      top: 48px;
+    }
+
+    .slide-menu .controls a {
+      overflow: hidden;
+    }
+
+    .slide-menu a {
+      color: #fff;
+    }
+
+    .slide-menu a:hover {
+    }
+
+    .slide-menu .btn {
+      float: right;
+      color: #fff;
+      padding: 8px;
+    }
+
+    .slide-menu .btn:hover {
+    }
+
+    .slide-menu .btn + .btn {
+      margin-right: 1px;
+    }
+
+    #test-menu-left {
+      padding: 16px;
+    }
+    .tLogin {
+      a {
+        display: flex !important;
+        color: #2c3d92 !important;
+        align-items: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        gap: 8px;
+        line-height: normal;
+        &:before {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          background-image: url(../img/ci/icon/icon-login.svg);
+        }
+      }
+    }
+  }
+}

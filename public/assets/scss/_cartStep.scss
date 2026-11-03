@@ -1,0 +1,30 @@
+.bStep {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  [class^="tStep"] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    color: #ccd2f0;
+    &.active {
+      color: $colorPrimary;
+    }
+   
+    p {
+      @include fontSizeXS;
+      font-weight: 700;
+      line-height: 1em;
+    }
+    .step {
+      @include radius(4px);
+      line-height: 1em;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      padding: 4px;
+      background-color: #f3f5fb;
+    }
+  }
+}

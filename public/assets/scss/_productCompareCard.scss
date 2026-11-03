@@ -1,0 +1,269 @@
+@import "_mixins";
+@import "_variables";
+@import "_mediaquery";
+
+.productCompareCard {
+  @include radius(8px);
+  flex-shrink: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  height: auto;
+  background: #ffffff;
+  border: 1px solid $colorPrimaryOutline;
+  overflow: visible !important;
+  
+  @include screenS{
+    padding: 16px;
+    gap: 20px;
+  }
+  .bGroup {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    // gap: 32px;
+    @include screenS{
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .bWishlist {
+      @include radius(50px);
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid $colorPrimaryOutline;
+      @include screenS{
+        position: inherit;
+      }
+      .control--checkbox {
+        .control__indicator {
+          width: 20px;
+          height: 20px;
+          display: block;
+          top: 5px;
+          left: 12px;
+          background-image: url(../img/ci/product/ico-wishlist.svg);
+        }
+        // input:checked~.control__indicator{
+        //   background-image: url(../img/ci/product/ico-wishlist-checked.svg);
+        // }
+      }
+    }
+    .bImg {
+      background-color: #ffffff;
+      aspect-ratio: 1/1;
+      width: 100%;
+      margin-top: 43px;
+      @include screenS{
+        width: 220px;
+        height:  180px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .bDelete {
+      @include radius(50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #fda29b;
+      background-image: url(../img/ci/ico-delete.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      @include screenS{
+        position: inherit;
+      }
+    }
+  }
+  .bRating {
+    width: 100%;
+    display: flex;
+    gap: 4px;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    @include screenS{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bRate {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      order: 2;
+      @include screenS{
+        order: 1;
+      }
+      .tRate{
+        @include fontSizeXS;
+        font-weight: 300;
+      }
+    }
+    .bBadge {
+      display: flex;
+      gap: 4px;
+      order: 1;
+      zoom: 0.7;
+      @include screenS{
+        gap: 12px;
+        order: 2;
+        zoom: 1;
+      }
+      .badgeIcon {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 28px;
+        height: 28px;
+        .tWarranty{
+          display: none;
+        }
+        &.IconFree{
+          background-image: url(../img/ci/product/ico-free.svg);
+        }
+        &.IconInstallment{
+          background-image: url(../img/ci/product/ico-installment.svg);
+        }
+        &.IconDeliver{
+          background-image: url(../img/ci/product/ico-deliver.svg);
+        }
+        &.IconWarranty{
+          position: relative;
+          background-image: url(../img/ci/product/ico-warranty.svg);
+          .tWarranty{
+            position: absolute;
+            top: 2px;
+            left: 8px;
+            display: block
+          }
+        }
+      }
+    }
+  }
+  .bDetail {
+    @include fontSizeMD;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 300;
+    .bPrice {
+      &.discount {
+        .bGroup {
+          p {
+            &:last-child {
+              display: block;
+              @include fontSizeSM;
+              color: #98a2b3;
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+      .tLastOne {
+        display: block;
+        color: #d92d20;
+        @include fontSizeXS;
+        font-weight: 300;
+      }
+      &.lastOne {
+      }
+      &.outStock {
+        .bGroup{
+          display: none;
+        }
+      }
+      .tOutStock {
+        display: block;
+        text-decoration: none !important;
+        color: #d92d20;
+        @include fontSizeMD;
+        font-weight: 300;
+      }
+      .bGroup {
+        display: flex;
+        justify-content: start;
+        gap: 4px;
+        align-items: center;
+        p {
+          @include fontSizeXL;
+          &::before {
+            content: "฿";
+          }
+          &:last-child {
+            @include fontSizeSM;
+            display: none;
+            color: #98a2b3;
+            text-decoration: line-through;
+          }
+        }
+        // .tOutStock {
+        //   display: none;
+        //   color: #d92d20;
+        //   @include fontSizeXS;
+        //   font-weight: 300;
+        // }
+      }
+      // .tOutStock,.tLastOne{
+      //   display: none;
+      // }
+      
+      // .tDetail {
+      //   .tLastOne {
+      //     display: none;
+         
+      //   }
+      // }
+    }
+  }
+  .bBtn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    .btn{
+      min-width: inherit;
+      width: 100%;
+      @include screenS{
+        width: 100%;
+      }
+    }
+    .tLink{
+      @include fontSizeSM;
+      text-decoration: underline;
+      color: #667085;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      color: #667085;
+      &:after{
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/ui/button/ico-arrow-right-dark.svg);
+      }
+    }
+  }
+}

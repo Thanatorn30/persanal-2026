@@ -1,0 +1,84 @@
+section#pFloatShare {
+  position: relative;
+  // bottom: 12px;
+  display: flex;
+  width: 100%;
+  z-index: 94033;
+  justify-content: center;
+  padding-bottom: 32px;
+
+  @include screenL {
+    // @include absoluteY;
+    // top: 234px;
+    position: absolute;
+    top: 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+  .bFloatShare {
+    background-color: $colorGray100;
+    padding: 10px 20px;
+    @include radius(100px);
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    align-items: center;
+
+    @include screenL {
+      padding: 20px;
+      flex-direction: column;
+    }
+  }
+  .st-custom-button {
+    @include transitAnimate;
+    cursor: pointer;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: center center no-repeat;
+    background-color: $colorGray100;
+    overflow: hidden;
+    text-indent: -99999px;
+    background-size: auto;
+
+    &[data-network="facebook"] {
+      background-image: url(../img/ui/sharethis/ico-fb.svg);
+    }
+    &[data-network="twitter"] {
+      background-image: url(../img/ui/sharethis/ico-tw.svg);
+    }
+    &[data-network="linkedin"] {
+      background-image: url(../img/ui/sharethis/ico-linkedin.svg);
+    }
+    &[data-network="email"] {
+      background-image: url(../img/ui/sharethis/ico-emil.svg);
+    }
+    &[data-network="print"] {
+      background-image: url(../img/ui/sharethis/ico-print.svg);
+    }
+    &[data-network="copy"] {
+      background-image: url(../img/ui/sharethis/ioc-copy.svg);
+      background-size: auto 35%;
+      &.complete {
+        background-color: #ffffff;
+        background-image: url(../img/ui/sharethis/ico-complete.svg);
+        background-size: auto 50%;
+      }
+    }
+    &:hover {
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+    }
+  }
+
+  span {
+    color: $colorGray400;
+    text-align: center;
+  }
+}

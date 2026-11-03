@@ -1,0 +1,413 @@
+// Accordion Style
+@import "_accordion";
+
+footer {
+  .bAccord {
+    width: 100%;
+    border: none !important;
+    padding: 0 !important;
+    .btnAccord {
+    }
+    .contentAccord {
+      padding-top: 16px;
+      padding-left: 0px;
+    }
+  }
+  background-color: #f2f4f7;
+  padding: 0px 0;
+  @include flex;
+  // gap: 32px;
+  @include screenS {
+    padding: 0px 0;
+  }
+  .bFooter {
+    width: 100%;
+    padding: 16px 0px;
+    background: linear-gradient(0deg, #1f1690 47.95%, #71acf0 148.08%);
+    @include screenS {
+      display: flex;
+      flex-direction: row;
+      border-radius: 20px 20px 0px 0px;
+      padding: 34px 0px;
+      justify-content: center;
+      align-items: center;
+
+      @include flex;
+    }
+    .topFooter {
+      display: flex;
+      min-height: 52px;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      @include screenS {
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+        @include tablet {
+          display: flex;
+          min-height: 52px;
+          justify-content: space-around;
+          align-items: center;
+        }
+      }
+
+      .bContent {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+
+        @include screenS {
+          flex-direction: row;
+          gap: 12px;
+          @include tablet {
+            flex-direction: column;
+          }
+        }
+        .warranty {
+          background: url(../img/ci/footer/icon-warranty.svg);
+          background-repeat: no-repeat;
+          width: 32px;
+          height: 32px;
+          background-size: 100%;
+        }
+        .shipping {
+          background: url(../img/ci/footer/icon-free-shipping.svg) no-repeat;
+          width: 48px;
+          background-repeat: no-repeat;
+          height: 32px;
+          background-size: 100%;
+        }
+        .clock {
+          background: url(../img/ci/footer/icon-clock.svg) no-repeat;
+          width: 32px;
+          background-repeat: no-repeat;
+          height: 32px;
+          background-size: 100%;
+        }
+        .credit {
+          background: url(../img/ci/footer/icon-credit.svg) no-repeat;
+          width: 32px;
+          height: 32px;
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        .bText {
+          display: flex;
+
+          align-items: flex-start;
+          @include screenS {
+            flex-direction: column;
+          }
+
+          h3 {
+            font-size: 10px;
+            color: #fff;
+            font-style: normal;
+            font-weight: 300;
+            @include screenS {
+              @include fontSizeXL;
+              font-weight: 700;
+              line-height: 28px;
+              @include tablet {
+                @include fontSizeMD;
+              }
+            }
+          }
+          p {
+            font-size: 0;
+            @include screenS {
+              @include fontSizeMD;
+              color: #fff;
+              font-style: normal;
+              font-weight: 300;
+              line-height: normal;
+              @include tablet {
+                font-size: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bLogo {
+      img {
+        display: block;
+        width: auto;
+        height: 54px;
+      }
+    }
+    .bSitemap {
+      display: none;
+      @include screenM {
+        display: block;
+      }
+      nav {
+        @include flex($flxDirect: row, $jusCon: space-between);
+        gap: 36px;
+      }
+    }
+    .bSocial {
+      @include flex($flxDirect: row, $jusCon: space-between);
+      gap: 18px;
+    }
+  }
+  .bMiddle {
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    gap: 24px 16px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    @include screenS {
+      @include container;
+      padding-top: 40px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .bContent {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+      gap: 12px;
+      text-align: center;
+      @include screenS {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+        gap: 12px;
+        text-align: left;
+      }
+
+      .tTitle {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        h3 {
+          color: #1d2939;
+          text-align: center;
+        }
+        p {
+          color: #101828;
+          @include fontSizeXS;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+        }
+      }
+      .bImg {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        .facebook {
+          background: url(../img/ci/footer/icon-facebook.svg);
+          width: 24px;
+          height: 24px;
+          background-size: 100%;
+        }
+        .msn {
+          background: url(../img/ci/footer/icon-msn.png);
+          width: 24px;
+          height: 24px;
+          background-size: 100%;
+        }
+        .youtube {
+          background: url(../img/ci/footer/icon-youtube.png);
+          width: 24px;
+          height: 24px;
+          background-size: 100%;
+        }
+        .tiktok {
+          background: url(../img/ci/footer/icon-tiktok.png);
+          width: 24px;
+          height: 24px;
+          background-size: 100%;
+        }
+        .line {
+          background: url(../img/ci/footer/icon-line.png);
+          width: 24px;
+          height: 24px;
+          background-size: 100%;
+        }
+        .instagram {
+          background: url(../img/ci/footer/icon-instagram.svg);
+          width: 24px;
+          height: 24px;
+          background-size: 100%;
+        }
+        .payment {
+          background: url(../img/ci/footer/img-payment.png);
+          width: 300px;
+          height: 85.714px;
+        }
+        .shipping {
+          background: url(../img/ci/footer/img-shipping.png);
+          width: 180px;
+          height: 77.786px;
+          @include screenS {
+            background: url(../img/ci/footer/img-shipping.png);
+            width: 220px;
+            height: 77.786px;
+          }
+        }
+        .guarantee-1 {
+          background: url(../img/ci/footer/icon-guarantee1.png) no-repeat;
+          width: 28px;
+          height: 32px;
+        }
+        .guarantee-2 {
+          background: url(../img/ci/footer/img-guarantee2.png) no-repeat;
+          width: 80px;
+          height: 32px;
+        }
+      }
+    }
+  }
+  .bMore {
+    width: 100%;
+    @include container;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    border-top: 1px solid #d0d5dd;
+    @include screenS {
+      flex-direction: row;
+    }
+    .bLeft {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 16px;
+      @include screenS {
+        flex-direction: row;
+        gap: 60px;
+        width: 100%;
+      }
+      .btnAccord {
+        @include screenS {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      a {
+        cursor: pointer;
+      }
+      .bTitle {
+        h3 {
+          color: #1d2939;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+      .bText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+    .bRight {
+      display: flex;
+      justify-content: center;
+      @include screenS {
+        max-width: 400px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 21px;
+      }
+      .bText {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 16px;
+        @include screenS {
+          max-width: 300px;
+          align-items: flex-start;
+          text-align: left;
+          gap: 12px;
+        }
+        .tContent {
+          display: flex;
+          flex-direction: column;
+          max-width: 340px;
+          gap: 8px;
+          @include screenS {
+            width: 100%;
+          }
+          h3 {
+            @include fontSizeSM;
+          }
+          p {
+            @include fontSizeSM;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+          }
+        }
+        .bBtn {
+          a {
+            color: #fcfcfd;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            display: flex;
+            height: 44px;
+            padding: 8px 40px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            border-radius: 8px;
+            border: 1px solid #2c3d92;
+            background: #2c3d92;
+          }
+        }
+      }
+    }
+  }
+  .bCopyTerms {
+    @include container;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 16px 0px 40px 0px;
+    align-items: center;
+    border-top: 1px solid #d0d5dd;
+    gap: 16px;
+
+    @include screenS {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0px;
+    }
+    .bCopy {
+      p {
+        text-align: center;
+        color: #1d2939;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+      }
+    }
+    .bPrivacy {
+      display: flex;
+      gap: 32px;
+      a {
+        color: #1d2939;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+      }
+    }
+  }
+}

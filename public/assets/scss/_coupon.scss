@@ -1,0 +1,88 @@
+.bCouponCard {
+  display: flex;
+  .bContentL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80px;
+    @include radius(8px);
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-right: 1px dashed ;
+    border-top: 1px solid ;
+    border-left: 1px solid ;
+    border-bottom: 1px solid ;
+    p{
+      @include fontSizeSM;
+    }
+    .tBold{
+      @include fontSizeLG;
+      font-weight: 700;
+      &:before{
+        content: "฿";
+      }
+    }
+  }
+  .bContentR {
+    display: flex;
+    justify-content: space-between;
+    gap: 29px;
+    max-width: 200px;
+    max-height: 80px;
+    @include radius(8px);
+    padding: 8px;
+    border-left: none;
+    border-top: 1px solid ;
+    border-right: 1px solid ;
+    border-bottom: 1px solid ;
+    .tDetail{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .tBold{
+        p{
+          @include fontSizeMD;
+          color: $colorTypoSubtext1;
+          font-weight: 300;
+        }
+        .tCurency{
+          &:before{
+            content: "฿";
+          }
+          &:after{
+            content: "*";
+          }
+        }
+      }
+      .tCondition{
+        .tSmall{
+          color: $colorTypoSubtext2;
+          font-weight: 300;
+          @include fontSize2XS;
+        }
+      }
+    }
+    .bCollect{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 43px;
+      .btn{
+        @include fontSizeSM;
+        @include radius(4px);
+        padding: 4px 12px;
+        height: 26px ;
+        min-width: inherit;
+        max-width: 43px;
+      }
+      a{
+        @include fontSize2XS;
+        color: $colorTypoSubtext2;
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    }
+  }
+}

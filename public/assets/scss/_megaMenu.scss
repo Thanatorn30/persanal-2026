@@ -1,0 +1,191 @@
+@import "_variables";
+@import "_mixins";
+
+#ModalMegaMenu {
+  @include fontPrimary;
+  overflow: hidden;
+  @include radius(20px);
+  display: flex !important;
+  position: relative;
+  background-color: #f9fafb;
+  max-width: 1224px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999999;
+  .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url(../img/ui/menu/ico-close.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .bSideMenu {
+    width: 344px;
+    height: 100%;
+    padding: 31px 32px;
+    background-color: #ffffff;
+    border-right: 1px solid #f9fafb;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    h2 {
+      @include fontSizeXL;
+      color: $colorPrimary;
+      font-weight: 700;
+    }
+    ul {
+      width: 280px;
+      scrollbar-width: none !important;
+      overflow: scroll;
+      height: 100%;
+      gap: 8px;
+      li {
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        &:after {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-image: url(../img/ui/menu/ico-right-arrow.svg);
+        }
+        &.active {
+          @include radius(8px);
+          background-color: $colorBgForegroundBlueLight;
+          a {
+            color: $colorPrimary;
+            font-weight: 700;
+          }
+        }
+        a {
+          @include fontSizeMD;
+          font-weight: 300;
+          color: $colorTypoSubtext1;
+        }
+      }
+    }
+  }
+  .bContent {
+    padding: 36px 32px;
+    width: 100%;
+    align-content: center;
+    .notebook,
+    .compset,
+    .headphone,
+    .monitor,
+    .mouse_and_keyboard,
+    .gadgets,
+    .smartwatch,
+    .software,
+    .elect,
+    .office {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .megaMenuList {
+      .bBanner {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+    .bHead {
+      width: 100%;
+      padding: 0px 0px 16px 0px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $colorPrimaryOutline;
+      h2 {
+        width: 350px;
+        color: $colorTypoBasetext;
+        @include fontSizeXL;
+        font-weight: 700;
+      }
+      a {
+        color: $colorTertiary;
+        font-weight: 700;
+        text-decoration-line: underline;
+      }
+    }
+    .bBrand {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $colorPrimaryOutline;
+
+      gap: 8px;
+      p {
+        color: #101828;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+      }
+      .brandGroup {
+        scrollbar-width: none !important;
+        width: 100%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: row;
+        gap: 46px;
+        a {
+          background-color: #ffffff;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .bListSelect {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      gap: 32px;
+      overflow: hidden;
+      .bList {
+        scrollbar-width: none !important;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        width: 320px;
+        height: 424px;
+        a {
+          font-size: 16px;
+          padding: 16px 8px;
+          border-bottom: 1px solid $colorPrimaryOutline;
+        }
+        a:last-child {
+          border-bottom: none;
+        }
+      }
+      .bImg {
+        width: 464px;
+        // background-color: cadetblue;
+      }
+    }
+    .imgCover {
+      width: 100%;
+      height: 100%;
+      padding: 36px 36px 36px 0px;
+      img {
+        background-color: red;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,318 @@
+// Key Color
+
+// Primary
+$colorPrimary: var(--colorPrimary);
+$colorPrimaryOn: var(--colorPrimaryOn);
+$colorPrimaryHover: var(--colorPrimaryHover);
+$colorPrimaryLight: var(--colorPrimaryLight);
+$colorPrimaryDark: var(--colorPrimaryDark);
+$colorPrimaryFocused: var(--colorPrimaryFocused);
+$colorPrimaryOutline: var(--colorPrimaryOutline);
+$colorPrimaryVariant: var(--colorPrimaryVariant);
+
+// Secondary
+$colorSecondary: var(--colorSecondary);
+$colorSecondaryOn: var(--colorSecondaryOn);
+$colorSecondaryHovered: var(--colorSecondaryHovered);
+$colorSecondaryLight: var(--colorSecondaryLight);
+$colorSecondaryDark: var(--colorSecondaryDark);
+$colorSecondaryFocused: var(--colorSecondaryFocused);
+$colorSecondaryOutline: var(--colorSecondaryOutline);
+$colorSecondaryVariant: var(--colorSecondaryVariant);
+
+// SubSecond
+$colorSubSecondary: var(--colorSubSecondary);
+$colorSubSecondaryOn: var(--colorSubSecondaryOn);
+$colorSubSecondaryHovered: var(--colorSubSecondaryHovered);
+$colorSubSecondaryLight: var(--colorSubSecondaryLight);
+$colorSubSecondaryDark: var(--colorSubSecondaryDark);
+$colorSubSecondaryFocused: var(--colorSubSecondaryFocused);
+$colorSubSecondaryOutline: var(--colorSubSecondaryOutline);
+$colorSubSecondaryVariant: var(--colorSubSecondaryVariant);
+
+// Error State
+$colorError: var(--colorError);
+$colorErrorOn: var(--colorErrorOn);
+$colorErrorDisbled: var(--colorErrorDisbled);
+$colorErrorHovered: var(--colorErrorHovered);
+$colorErrorOutline: var(--colorErrorOutline);
+$colorErrorFg: var(--colorRed50);
+$colorDiscountPrice: var(--colorDiscountPrice);
+
+// Error Success
+$colorSuccess: var(--colorSuccess);
+$colorSuccessOn: var(--colorSuccessOn);
+$colorSuccessOutline: var(--colorSuccessOutline);
+$colorSuccessFg: var(--colorSuccessFg);
+
+// Background
+$colorBg: var(--colorGray25);
+$colorBgForeground: var(--colorGray50);
+$colorBgForegroundDark: var(--colorGray200);
+$colorBgForegroundLight: var(--colorBlue20);
+$colorBgForegroundBlueLight: var(--colorSkyBlue20);
+
+// Typography
+$colorTypoBasetext: var(--colorTypoBasetext);
+$colorTypoIcon: var(--colorTypoIcon);
+$colorTypoPlaceholder: var(--colorTypoPlaceholder);
+$colorTypoSubtext1: var(--colorTypoSubtext1);
+$colorTypoSubtext2: var(--colorTypoSubtext2);
+
+// Color State
+$colorStateError: var(--colorStateError);
+$colorStateSuccess: var(--colorStateSuccess);
+$colorStateWorking: var(--colorStateWorking);
+
+// Other
+$colorStroke: var(--colorStroke);
+$colorWhite: var(--colorWhite);
+$colorBlack: var(--colorBlack);
+$colorWarning: var(--colorWarning);
+$colorDisabled: var(--colorDisabled);
+$colorDisbledOn: var(--colorDisbledOn);
+
+// Gray Scale
+$colorGray25: var(--colorGray25);
+$colorGray50: var(--colorGray50);
+$colorGray100: var(--colorGray100);
+$colorGray200: var(--colorGray200);
+$colorGray300: var(--colorGray300);
+$colorGray400: var(--colorGray400);
+$colorGray500: var(--colorGray500);
+$colorGray600: var(--colorGray600);
+$colorGray700: var(--colorGray700);
+$colorGray800: var(--colorGray800);
+$colorGray900: var(--colorGray900);
+$colorGray950: var(--colorGray950);
+
+// Blue Scale
+$colorBlue10: var(--colorBlue10);
+$colorBlue20: var(--colorBlue20);
+$colorBlue30: var(--colorBlue30);
+$colorBlue40: var(--colorBlue40);
+$colorBlue50: var(--colorBlue50);
+$colorBlue60: var(--colorBlue60);
+$colorBlue70: var(--colorBlue70);
+$colorBlue80: var(--colorBlue80);
+$colorBlue90: var(--colorBlue90);
+$colorBlue100: var(--colorBlue100);
+
+// Yellow Scale
+$colorYellow10: var(--colorYellow10);
+$colorYellow20: var(--colorYellow20);
+$colorYellow30: var(--colorYellow30);
+$colorYellow40: var(--colorYellow40);
+$colorYellow50: var(--colorYellow50);
+$colorYellow60: var(--colorYellow60);
+$colorYellow70: var(--colorYellow70);
+$colorYellow80: var(--colorYellow80);
+$colorYellow90: var(--colorYellow90);
+$colorYellow100: var(--colorYellow100);
+
+// tertiary
+$colorTertiary: var(--colorSkyBlue70);
+$colorTertiaryHover: var(--colorSkyBlue80);
+$colorTertiaryOutline: var(--colorSkyBlue40);
+
+// Gradient
+@mixin colorGd-primary {
+  background: var(--gradient-primary);
+}
+@mixin colorGd-secound {
+  background: var(--gradient-secound);
+}
+@mixin colorGd-black {
+  background: var(--gradient-black);
+}
+@mixin colorGd-grey {
+  background: var(--gradient-grey);
+}
+@mixin colorGd-silver {
+  background: var(--gradient-silver);
+}
+@mixin colorGd-gold {
+  background: var(--gradient-gold);
+}
+
+// Container
+
+// --Mobile--
+@mixin container {
+  margin-inline: auto;
+  width: calc(100% - 48px);
+
+  @include screenS {
+    width: 90%;
+  }
+  @include screenM {
+    max-width: 1224px;
+  }
+}
+@mixin containerLG {
+  margin-inline: auto;
+  width: calc(100% - 48px);
+
+  @include screenS {
+    width: 90%;
+  }
+  @include screenM {
+    max-width: 1440px;
+  }
+}
+// @mixin container {
+//   width: 100%;
+//   max-width: 1224px;
+//   margin-inline: auto;
+// }
+@mixin containerS {
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+}
+@mixin containerXS {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+}
+@mixin innercontainer {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+$basefontsize: var(--baseFontsize);
+
+// Font
+@mixin fontPrimary($weight: normal, $lineheight: normal) {
+  font-family: "ekachon", sans-serif;
+  font-weight: $weight;
+  line-height: $lineheight;
+  @content;
+}
+
+// Special For This Site
+@mixin fontSecound($weight: normal, $lineheight: normal) {
+  font-family: "Pridi", sans-serif;
+  font-weight: $weight;
+  line-height: $lineheight;
+}
+
+// Font Size
+// @mixin fontSize3XS {
+//   font-size: 0.625rem;
+//   // line-height: 1em;
+//   @include screenS {
+//     font-size: 0.625rem;
+//   }
+// }
+// @mixin fontSize2XS {
+//   font-size: 12px;
+//   // line-height: 1em;
+//   @include screenS {
+//     font-size: 12px;
+//   }
+// }
+@mixin fontSize2XS {
+  font-size: 8px;
+  @include screenS {
+    font-size: 10px;
+  }
+}
+@mixin fontSizeXS {
+  font-size: 10px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 12px;
+  }
+}
+@mixin fontSizeSM {
+  font-size: 12px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 14px;
+  }
+}
+@mixin fontSizeMD {
+  font-size: 14px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 16px;
+  }
+}
+@mixin fontSizeLG {
+  font-size: 16px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 18px;
+  }
+}
+@mixin fontSizeXL {
+  font-size: 18px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 20px;
+  }
+}
+@mixin fontSize1XL {
+  font-size: 20px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 22px;
+  }
+}
+@mixin fontSize2XL {
+  font-size: 22px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 24px;
+  }
+}
+@mixin fontSize3XL {
+  font-size: 28px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 32px;
+  }
+}
+@mixin fontSize4XL {
+  font-size: 72px;
+  line-height: 1.5em;
+  @include screenS {
+    font-size: 48px;
+  }
+}
+
+// Head Font Size
+
+@mixin fontSizeHS {
+  font-size: 32px;
+  line-height: 1.5em;
+}
+@mixin fontSizeHM {
+  font-size: 44px;
+  line-height: 1.5em;
+}
+@mixin fontSizeHL {
+  font-size: 48px;
+  line-height: 1.5em;
+}
+@mixin fontSizeHXL {
+  font-size: 72px;
+  line-height: 1.5em;
+}
+@mixin fontSizeHOver {
+  font-size: 180px;
+  line-height: 1.5em;
+}
+
+// Font Weight
+@mixin light {
+  font-weight: lighter;
+}
+@mixin regular {
+  font-weight: normal;
+}
+@mixin semiBold {
+  font-weight: bold;
+}

@@ -1,0 +1,227 @@
+:root {
+  // Primary
+  .slick-track {
+    // width: 30000px !important;
+  }
+  --colorPrimary: var(--colorBlue80);
+  --colorPrimaryHover: var(--colorBlue90);
+  --colorPrimaryOn: var(--colorGray25);
+  --colorPrimaryLight: var(--colorBlue30);
+  --colorPrimaryDark: color-mix(in srgb, var(--colorPrimary) 70%, black);
+  --colorPrimaryFocused: var(--colorBlue50);
+  --colorPrimaryOutline: var(--colorGray300);
+  --colorPrimaryVariant: var(--colorGray600);
+
+  // Secondary
+  --colorSecondary: var(--colorYellow60);
+  --colorSecondaryOn: var(--colorGray900);
+  --colorSecondaryHovered: var(--colorYellow70);
+  --colorSecondaryLight: var(--colorYellow20);
+  --colorSecondaryDark: #0c1d31;
+  --colorSecondaryFocused: var(--colorYellow40);
+  --colorSecondaryOutline: var(--colorYellow30);
+  --colorSecondaryVariant: var(--colorGray600);
+
+  // SubSecond
+  --colorSubSecondary: #59c5c7;
+  --colorSubSecondaryOn: var(--colorGray900);
+  --colorSubSecondaryHovered: #59c5c7;
+  --colorSubSecondaryLight: #59c5c7;
+  --colorSubSecondaryDark: color-mix(
+    in srgb,
+    var(--colorSubSecondary) 70%,
+    black
+  );
+  --colorSubSecondaryFocused: #59c5c7;
+  --colorSubSecondaryOutline: #59c5c7;
+  --colorSubSecondaryVariant: var(--colorGray600);
+
+  // Error State
+  --colorError: var(--colorRed600);
+  --colorErrorOn: var(--colorGray25);
+  --colorErrorDisbled: var(--colorRed200);
+  --colorErrorHovered: var(--colorRed700);
+  --colorErrorOutline: var(--colorRed300);
+  --colorErrorFg: var(--colorRed50);
+
+  // Error Success
+  --colorSuccess: var(--colorGreen60);
+  --colorSuccessOn: var(--colorGray25);
+  --colorSuccessFg: var(--colorGreen10);
+  --colorSuccessOutline: var(--colorGreen20);
+
+  // Background
+  --colorBg: var(--colorGray25);
+  --colorBgForeground: var(--colorGray50);
+  --colorBgForegroundDark: var(--colorGray200);
+  --colorBgForegroundLight: var(--colorBlue20);
+  --colorFgBlueLight: var(--colorSkyBlue20);
+
+  // Typography
+  --colorTypoBasetext: var(--colorGray900);
+  --colorTypoSubtext1: var(--colorGray700);
+  --colorTypoSubtext2: var(--colorGray600);
+  --colorTypoIcon: var(--colorGray400);
+  --colorTypoPlaceholder: var(--colorGray500);
+  --colorDiscountPrice: var(--colorRed700);
+  --colorNormalPrice: var(--colorRed500);
+  --colorSavePrice: var(--colorGreen60);
+
+  // Color State
+  --colorShipping: var(--colorOrange600);
+  --colorShippingFg: var(--colorOrange50);
+  --colorShippingOutline: var(--colorOrange200);
+  --colorWorking: var(--colorViolet500);
+  --colorWorkingFg: var(--colorViolet50);
+  --colorWorkingOutline: var(--colorViolet200);
+
+  // Other
+  --colorWhite: var(--colorGray25);
+  --colorBlack: var(--colorGray950);
+  --colorWarning: var(--colorYellow60);
+  --colorDisabled: var(--colorBlue30);
+  --colorDisbledOn: var(--colorBlue20);
+  --colorStroke: #e5e7eb;
+
+  // Gray Scale
+  --colorGray25: #fcfcfd;
+  --colorGray50: #f9fafb;
+  --colorGray100: #f2f4f7;
+  --colorGray200: #f2f4f7;
+  --colorGray300: #d0d5dd;
+  --colorGray400: #98a2b3;
+  --colorGray500: #667085;
+  --colorGray600: #475467;
+  --colorGray700: #1d2939;
+  --colorGray800: #1d2939;
+  --colorGray900: #101828;
+  --colorGray950: #0c111d;
+
+  // tertiary Scale
+  --colorTertiary: var(--colorSkyBlue70);
+  --colorTertiaryHover: var(--colorSkyBlue80);
+  --colorTertiaryOutline: var(--colorSkyBlue40);
+
+  // Yellow Scale
+  --colorYellow10: #fffdfa;
+  --colorYellow20: #fceed9;
+  --colorYellow30: #f8d8aa;
+  --colorYellow40: #f4c27b;
+  --colorYellow50: #f0ac4c;
+  --colorYellow60: #fcaf17;
+  --colorYellow70: #d38d03;
+  --colorYellow80: #965d0d;
+  --colorYellow90: #674009;
+  --colorYellow100: #382305;
+
+  // Blue Scale
+  --colorBlue10: #fbfcfe;
+  --colorBlue20: #f3f5fb;
+  --colorBlue30: #ccd2f0;
+  --colorBlue40: #a5afe4;
+  --colorBlue50: #7e8dd8;
+  --colorBlue60: #566acc;
+  --colorBlue70: #384db8;
+  --colorBlue80: #2c3d92;
+  --colorBlue90: #202c6a;
+  --colorBlue100: #141c43;
+
+  // Red Scale
+  --colorRed25: #fbfcfe;
+  --colorRed50: #fef3f2;
+  --colorRed100: #fee4e2;
+  --colorRed200: #fecdca;
+  --colorRed300: #fda29b;
+  --colorRed400: #f97066;
+  --colorRed500: #f04438;
+  --colorRed600: #d92d20;
+  --colorRed700: #b42318;
+  --colorRed800: #912018;
+  --colorRed900: #7a271a;
+  --colorRed950: #55160c;
+
+  // Green Scale
+  --colorGreen10: #f6fef9;
+  --colorGreen20: #dbfae6;
+  --colorGreen30: #75e0a7;
+  --colorGreen40: #47cd89;
+  --colorGreen50: #17b26a;
+  --colorGreen60: #079455;
+  --colorGreen70: #067647;
+  --colorGreen80: #085d3a;
+  --colorGreen90: #074d31;
+  --colorGreen100: #053321;
+
+  // Violet Scale
+  --colorViolet25: #fbfaff;
+  --colorViolet50: #f5f3ff;
+  --colorViolet100: #ece9fe;
+  --colorViolet200: #ddd6fe;
+  --colorViolet300: #c3b5fd;
+  --colorViolet400: #a48afb;
+  --colorViolet500: #875bf7;
+  --colorViolet600: #7839ee;
+  --colorViolet700: #6927da;
+  --colorViolet800: #5720b7;
+  --colorViolet900: #491c96;
+  --colorViolet950: #2e125e;
+
+  // Orange Scale
+  --colorOrange25: #fefaf5;
+  --colorOrange50: #fef6ee;
+  --colorOrange100: #fdead7;
+  --colorOrange200: #f9dbaf;
+  --colorOrange300: #f7b27a;
+  --colorOrange400: #f38744;
+  --colorOrange500: #ef6820;
+  --colorOrange600: #e04f16;
+  --colorOrange700: #b93815;
+  --colorOrange800: #932f19;
+  --colorOrange900: #772917;
+  --colorOrange950: #511c10;
+
+  // Sky Blue Scale
+  --colorSkyBlue10: #fafcff;
+  --colorSkyBlue20: #ebf2ff;
+  --colorSkyBlue30: #c6dcff;
+  --colorSkyBlue40: #a1c8ff;
+  --colorSkyBlue50: #72b2ff;
+  --colorSkyBlue60: #0099ff;
+  --colorSkyBlue70: #0089e4;
+  --colorSkyBlue80: #0077c6;
+  --colorSkyBlue90: #0061a1;
+  --colorSkyBlue100: #004472;
+
+  --gradient-primary: linear-gradient(
+    179deg,
+    #1c2a73 21.03%,
+    #2c3d92 75.26%,
+    #5568c5 126.9%
+  );
+  --gradient-primaryL: linear-gradient(179deg, #4b73ff 100%, #7cf7ff 100%);
+  --gradient-secound: linear-gradient(37deg, #59c5c7 40.09%, #adfff5 95.58%);
+  --gradient-black: linear-gradient(122deg, #181010 25%, #51515d 100%);
+  --gradient-grey: linear-gradient(40deg, #adabab 25%, #777 100%);
+  --gradient-silver: radial-gradient(
+    91.77% 115.83% at 22.77% 18.75%,
+    #fff 0%,
+    #d9d9d9 100%
+  );
+  --gradient-gold: linear-gradient(
+    165deg,
+    #b1884e 12.42%,
+    #bf9a5d 14%,
+    #dfc480 18.75%,
+    #f3dd96 21.92%,
+    #fbe79e 24.29%,
+    #c8a465 43.3%,
+    #d8b872 48.05%,
+    #fbe38e 57.55%,
+    #b1884e 77.34%,
+    #815d3a 86.05%,
+    #67462f 91.59%
+  );
+
+  //Font Size
+  --baseFontsize: 16px;
+}

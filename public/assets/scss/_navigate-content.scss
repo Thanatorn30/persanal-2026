@@ -1,0 +1,74 @@
+section#pNavigateContent{
+  border-top: 1px solid $colorGray600;
+  padding: 20px 0 20px;
+  @include screenS{
+    padding: 20px 0 60px;
+  }
+  .bNavigateContent{
+    @include grid(2,20px,20%);
+    >div{
+      a{
+        color: $colorGray200;
+  
+        span{
+          display: flex;
+          flex-wrap: nowrap;
+          column-gap: 8px;
+          @include fontSizeMD;
+  
+          &:before,&:after{
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+    
+          }
+        }
+        p{
+          @include fontSizeLG;
+        }
+        &:hover{
+          color: $colorPrimary;
+        }
+      }
+      &:first-child{
+        justify-self: flex-start;
+        span{
+          justify-content: flex-start;
+          &:after{display: none;}
+          &:before {
+            background-image: url(../img/ui/ico-arrowL.svg);
+            @include transitAnimate;
+          }
+        }
+        &:hover {
+          span{
+            &:before {
+              background-image: url(../img/ui/ico-arrowL-hover.svg);
+            }
+          }
+        }
+      }
+      &:last-child{
+        justify-self: flex-end;
+        span{
+          justify-content: flex-end;
+          &:before{display: none;}
+          &:after {
+            background-image: url(../img/ui/ico-arrowR.svg);
+            @include transitAnimate;
+          }
+        }
+        &:hover {
+          span{
+            &:after {
+              background-image: url(../img/ui/ico-arrowR-hover.svg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

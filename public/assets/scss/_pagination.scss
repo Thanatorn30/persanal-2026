@@ -1,0 +1,152 @@
+// Pagination
+
+#pPagination {
+  margin: 20px 0;
+  .bPagination {
+    // border-top: 1px solid $colorGray700;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    // column-gap: 56px;
+    @include mobile {
+      column-gap: 10px;
+    }
+    @include mobileS {
+      zoom: 0.7;
+    }
+    .btnPagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      line-height: 40px;
+      @include radius(4px);
+      text-align: center;
+      cursor: pointer;
+      color: $colorGray400;
+      white-space: nowrap;
+      border: 1px solid #d0d5dd;
+      &.active {
+        background-color: $colorPrimary;
+        color: $colorWhite;
+      }
+      &:last-child {
+        width: 32px;
+        height: 34px;
+      }
+      &:hover {
+        background-color: $colorPrimaryLight;
+      }
+
+      &.disable {
+        // background-color: $colorGray800;
+        color: $colorGray50;
+        border: none;
+        cursor: default;
+      }
+
+      // &.disable:hover {
+      //   background-color: $colorGray800;
+      //   color: $colorGray50;
+      // }
+
+      @include mobile {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+      }
+    }
+
+    a {
+      @extend .btnPagination;
+    }
+    .bCenter {
+      display: flex;
+      column-gap: 16px;
+      gap: 24px;
+      justify-content: center;
+      @include mobile {
+        flex-wrap: wrap;
+        column-gap: 8px;
+        row-gap: 8px;
+      }
+    }
+    .bLeft,
+    .bRight {
+      a {
+        // width: auto;
+        display: flex;
+        @include radius(8px);
+        flex-wrap: nowrap;
+        column-gap: 8px;
+        width: 36px;
+        height: 36px;
+        color: $colorGray200;
+        background: none;
+        border: 1px solid #2c3d92;
+        @include fontSizeMD;
+
+        &:before,
+        &:after {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-image: url(../img/ui/pagiantion/icon-chevron-left.svg);
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+        }
+        &:hover {
+          color: $colorPrimary;
+        }
+
+        &.disable {
+          background: #fcfcfd;
+          border: 1px solid #cad3ff;
+          opacity: 0.5;
+          pointer-events: none;
+          cursor: default;
+        }
+      }
+    }
+
+    .bLeft {
+      margin-right: 40px;
+      a {
+        &:after {
+          display: none;
+        }
+        &:before {
+          background-image: url(../img/ui/pagiantion/icon-chevron-left.svg);
+          @include transitAnimate;
+        }
+        &:hover {
+          &:before {
+            background-image: url(../img/ui/pagiantion/icon-chevron-left.svg);
+          }
+        }
+      }
+    }
+
+    .bRight {
+      margin-left: 40px;
+      a {
+        &:before {
+          display: none;
+        }
+        &:after {
+          background-image: url(../img/ui/pagiantion/icon-chevron-right.svg);
+          @include transitAnimate;
+        }
+        &:hover {
+          &:after {
+            background-image: url(../img/ui/pagiantion/icon-chevron-right.svg);
+          }
+        }
+      }
+    }
+  }
+}

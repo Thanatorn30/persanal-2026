@@ -1,0 +1,403 @@
+// Animate
+@mixin transitAnimate($time: 0.3s, $style: ease) {
+  transition: all $time $style;
+  -webkit-transition: all $time $style;
+  -moz-transition: all $time $style;
+  -o-transition: all $time $style;
+  -ms-transition: all $time $style;
+}
+
+// Absolute Item
+@mixin resetAbsolute {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+}
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+@mixin absoluteY {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  @content;
+}
+@mixin absoluteX {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  @content;
+}
+
+// Grid Template
+@mixin grid($item, $colgap, $rowgap) {
+  display: grid;
+  grid-template-columns: repeat($item, 1fr);
+  grid-column-gap: $colgap;
+  grid-row-gap: $rowgap;
+}
+
+// Radius
+@mixin radius($height: 8px) {
+  overflow: hidden;
+  border-radius: $height;
+  -webkit-border-radius: $height;
+  -moz-border-radius: $height;
+  -ms-border-radius: $height;
+  -o-border-radius: $height;
+}
+@mixin radiusCustom($tl, $tr, $br, $bl) {
+  border-radius: $tl $tr $br $bl;
+  -webkit-border-radius: $tl $tr $br $bl;
+  -moz-border-radius: $tl $tr $br $bl;
+  -ms-border-radius: $tl $tr $br $bl;
+  -o-border-radius: $tl $tr $br $bl;
+}
+
+// Youtube Responsive
+@mixin youtubeResponsive {
+  position: relative;
+  padding-top: 56.2%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin mapResponsive {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Reset Style
+@mixin resetForm {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+// Ellipsis
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Shadow
+@mixin shadow {
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.12);
+}
+
+// Custon Scroll Bar
+@mixin customScroll {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $colorPrimary;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $colorPrimary;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f7f7f7;
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+  }
+}
+
+// Random Color
+@mixin random-color($r, $g, $b) {
+  background-color: rgb(random($r), random($g), random($b));
+}
+
+// Special List
+@mixin olcustom {
+  ol {
+    padding-inline-start: 0;
+    counter-reset: item;
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 5px;
+      align-items: flex-start;
+      &:before {
+        display: inline-block;
+        counter-increment: item;
+        @content;
+      }
+    }
+  }
+}
+
+// CMS Editor Style
+@mixin texteditor {
+  * {
+    @include fontPrimary;
+    line-height: 120%;
+    margin-bottom: 18px;
+    // color: $colorGray200;
+    &:last-child,
+    * > * {
+      margin-bottom: 0;
+    }
+  }
+  h2 {
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 16px;
+    color: $colorBlack;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  span {
+    color: $colorPrimary;
+  }
+  a {
+    word-break: break-all;
+    color: $colorPrimary;
+    @include transitAnimate;
+    &:hover {
+      text-decoration: underline;
+      color: $colorSecondary;
+    }
+  }
+  blockquote {
+    color: $colorTypoBasetext;
+    background: #f9f9f9;
+    border-left: 10px solid $colorSecondary;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+  blockquote:before {
+    color: $colorPrimary;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }
+  hr {
+    width: 100%;
+    height: 1px;
+    background-color: $colorGray700;
+  }
+  table {
+    width: 100%;
+    thead {
+    }
+    tbody {
+    }
+    tr {
+    }
+    td {
+      padding: 6px 6px;
+    }
+  }
+  dl {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    dt,
+    dd,
+    dt > *,
+    dd > * {
+      margin-bottom: 18px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  ul li {
+    list-style: disc;
+    margin-bottom: 0;
+  }
+  b {
+    font-weight: 500;
+  }
+  strong {
+    font-weight: bold;
+  }
+}
+
+// Width Wrap
+@mixin widthWrap {
+  @include screenM {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+}
+
+// mobile Wrap
+@mixin mobileWrap {
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+  background-color: $colorWhite;
+}
+@mixin bgGraphic {
+  // background:  url(../img/ci/pic-success.png)  no-repeat $colorPrimaryL;
+  // background-position: cover;
+  background-size: cover;
+}
+
+// Padding Bottom
+@mixin pbBottom {
+  padding-bottom: 110px;
+}
+
+// Translate
+@mixin translateY($position) {
+  transform: translateY($position);
+  -webkit-transform: translateY($position);
+  -moz-transform: translateY($position);
+  -ms-transform: translateY($position);
+  -o-transform: translateY($position);
+}
+
+@mixin translateX($position) {
+  transform: translateX($position);
+  -webkit-transform: translateX($position);
+  -moz-transform: translateX($position);
+  -ms-transform: translateX($position);
+  -o-transform: translateX($position);
+}
+
+// CSS Arrow
+@mixin arrow($size, $weight, $color, $direction) {
+  @include transitAnimate;
+  position: relative;
+  content: "";
+  display: block;
+  width: $size;
+  height: $size;
+  border-top: $weight solid;
+  border-left: $weight solid;
+  border-color: $color;
+  transform: rotate($direction);
+  -webkit-transform: rotate($direction);
+  -moz-transform: rotate($direction);
+  -ms-transform: rotate($direction);
+  -o-transform: rotate($direction);
+
+  @content;
+}
+
+// Flex
+@mixin flexCenter($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+@mixin flex($jusCon: center, $aliItem: center, $flxDirect: column) {
+  display: flex;
+  justify-content: $jusCon;
+  align-items: $aliItem;
+  flex-direction: $flxDirect;
+
+  @content;
+}
+
+// Mask
+@mixin mask($img) {
+  -webkit-mask: url($img) center center no-repeat;
+  mask: url($img) center center no-repeat;
+  mask-size: contain;
+  display: block;
+}
+
+// Text Gradient
+@mixin textGD($color: var(--gradient-primary)) {
+  background: $color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Text Outline Gradient
+@mixin textOutlineGD(
+  $colorBG: $colorSecondary,
+  $colorGD: var(--gradient-primary),
+  $outlineWeight: 1px
+) {
+  letter-spacing: $outlineWeight;
+  background: $colorGD;
+  color: $colorBG;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: $outlineWeight transparent;
+}

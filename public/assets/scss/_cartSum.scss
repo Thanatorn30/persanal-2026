@@ -1,0 +1,381 @@
+.bSumPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: auto;
+  .bRedeem,
+  .bPoint,
+  .bSum {
+    @include radius(8px);
+    border: 1px solid $colorPrimaryOutline;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .bHead {
+      display: flex;
+      justify-content: space-between;
+      a {
+        color: #0089e4;
+        text-decoration: underline;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        &::after {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          @include mask("../img/ui/button/ico-arrow-right-dark.svg");
+          background-color: #0089e4;
+          // background-image: url(../img/ui/button/ico-arrow-right-dark.svg);
+        }
+      }
+    }
+    .bProductOrder {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .bHead {
+        .tBold {
+          line-height: normal;
+        }
+        .bOpen {
+          display: flex;
+          align-items: center;
+          @include screenS {
+            display: none;
+          }
+          .bArrow {
+            width: 20px;
+            height: 20px;
+            rotate: 270deg;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(../img/ui/button/ico-arrow-right-dark.svg);
+            &.rotate {
+              rotate: 90deg;
+            }
+          }
+        }
+      }
+      .bProductDetail {
+        display: none;
+        &.openProduct {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .bProduct {
+          display: flex;
+          align-items: start;
+          justify-content: space-between;
+          .bDetail {
+            width: 100%;
+            padding: 0px;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 16px !important;
+            flex-direction: row !important;
+            .bImg {
+              @include radius(4px);
+              width: 36px;
+              height: 36px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            .tDetail {
+              p {
+                @include fontSizeSM;
+                color: #475467;
+                span {
+                  font-weight: 700;
+                }
+                &:first-child {
+                  max-width: 160px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+          .bPrice {
+            display: flex;
+            .tPrice {
+              font-weight: 300;
+              color: #101828;
+              display: flex;
+              &:before {
+                content: "฿";
+              }
+            }
+            .tDiscount {
+              display: none;
+            }
+            &.discount {
+              .tPrice {
+                color: $colorDiscountPrice;
+              }
+              .tDiscount {
+                @include fontSizeXS;
+                display: block;
+                text-decoration: line-through;
+                color: #98a2b3;
+              }
+            }
+          }
+        }
+      }
+    }
+    .control-group {
+      display: flex;
+      .controlPass {
+        width: 100%;
+        input {
+          border-radius: 8px 0px 0px 8px;
+        }
+      }
+      .btn {
+        width: 100px !important;
+        height: 48px;
+        min-width: inherit;
+        border-radius: 0px 8px 8px 0px;
+      }
+    }
+  }
+  .bRedeem {
+    padding: 12px;
+    @include screenS {
+      padding: 24px;
+    }
+  }
+  .bPoint {
+    padding: 12px;
+    border-color: #875bf7;
+    background-color: #f5f3ff;
+    .bHead {
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-weight: 300;
+      }
+      .tHead {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        &:before {
+          content: "";
+          display: block;
+          width: 16px;
+          height: 16px;
+          background-size: contain;
+          background-image: url(../img/ci/cart/ico-jibcoin.svg);
+        }
+      }
+    }
+    .tDetail {
+      display: flex;
+      justify-content: space-between;
+      .groupText {
+        p {
+          @include fontSize2XS;
+          font-weight: 300;
+        }
+        .tBold {
+          @include fontSizeSM;
+        }
+      }
+      .bBtn {
+        .btn {
+          @include radius(200px);
+          @include fontSizeSM;
+          white-space: nowrap;
+          min-width: inherit;
+          width: 124px !important;
+          padding: 8px 12px !important;
+          background: linear-gradient(45deg, #4300b1 0%, #a531dc 100%);
+          &:hover {
+            color: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+  .bSum {
+    padding: 12px;
+    @include screenS {
+      padding: 24px;
+    }
+    .bOrderBy {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $colorPrimaryOutline;
+      @include screenS {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+      .tOrder {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        p {
+          line-height: 1.5em;
+        }
+      }
+      .bRegister {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        p,
+        a {
+          @include fontSizeSM;
+        }
+      }
+    }
+    .bDetail {
+      display: flex;
+      flex-direction: column;
+      padding: 16px 0px;
+      gap: 8px !important;
+      border-top: 1px solid $colorPrimaryOutline;
+      border-bottom: 1px solid $colorPrimaryOutline;
+      align-items: end;
+      @include screenS {
+        flex-direction: column;
+        gap: 16px !important;
+      }
+      // @include tablet-p{
+      //   align-items: end;
+      // }
+
+      .bProductPrice {
+        padding: 0px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+          @include fontSizeSM;
+          font-weight: 300;
+          &:last-child {
+            &::before {
+              content: "฿";
+            }
+          }
+        }
+      }
+      .bPrice {
+        padding: 0px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        &.bCoupon {
+          position: relative;
+          width: 100%;
+          padding: 12px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          @include screenS {
+            width: 100%;
+          }
+          @include tablet-p {
+            width: 300px;
+          }
+        }
+        p {
+          @include fontSizeSM;
+          font-weight: 300;
+          &:last-child {
+            &::before {
+              content: "-฿";
+            }
+          }
+        }
+        .discount {
+          &:last-child {
+            color: $colorDiscountPrice;
+          }
+        }
+      }
+
+      .bDeliver {
+        @include fontSizeSM;
+        padding: 0px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 300;
+      }
+    }
+    .bSumPrice {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .tPrice {
+        display: flex;
+        justify-content: space-between;
+        p {
+          @include fontSizeMD;
+          &:last-child {
+            &::before {
+              content: "฿";
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+      .tSave {
+        @include fontSizeXS;
+        font-weight: 300;
+        color: #079455;
+        text-align: end;
+        span {
+          &::before {
+            content: "฿";
+          }
+        }
+      }
+    }
+    a {
+      @include fontSizeXS;
+      font-weight: 700;
+      color: #0089e4;
+      text-align: center;
+      text-decoration: underline;
+    }
+  }
+  .bBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .btn {
+      width: 100%;
+    }
+  }
+  .bRegister {
+    text-align: center;
+    p {
+      @include fontSizeMD;
+      text-align: center;
+      font-weight: 300;
+      color: #1d2939;
+      a {
+        color: #0089e4;
+        font-weight: 700;
+      }
+    }
+  }
+}

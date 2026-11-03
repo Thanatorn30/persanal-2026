@@ -1,0 +1,683 @@
+@import "_mixins";
+
+$inputHeight: 48px;
+$inputHeightM: 48px;
+$placeholderColor: $colorTypoPlaceholder;
+$colorText: $colorTypoSubtext1;
+$colorBorder: $colorPrimaryOutline;
+$colorFocus: $colorPrimary;
+$colorBGInput: rgba(255, 255, 255, 1);
+$colorError: $colorError;
+
+@mixin inputStyle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  @include fontSizeLG;
+  font-weight: 400;
+  @include fontPrimary(normal, $inputHeightM);
+  height: $inputHeightM;
+  position: relative;
+  width: 100%;
+  outline: 0;
+  color: $colorText;
+  border: 1px solid $colorBorder;
+  background-color: $colorBGInput;
+  @include radius(8px);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  padding: 12px 16px;
+  overflow: hidden;
+
+  @include screenM {
+    @include fontSizeMD;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: $placeholderColor;
+    opacity: 1;
+  }
+}
+
+input[list],
+input[type="text"],
+input[type="password"],
+input[type="textarea"],
+textarea,
+input[type="date"],
+input[type="month"],
+input[type="year"],
+input[type="email"] {
+  @include inputStyle;
+
+  @include transitAnimate;
+
+  resize: none;
+
+  &:disabled {
+    // opacity: 0.6;
+    color: $colorTypoIcon;
+    background-color: $colorDisbledOn;
+    border: 1px solid $colorDisabled;
+  }
+  // overflow-y: ;
+  &:focus {
+    border-color: $colorFocus;
+  }
+}
+select {
+  &:disabled {
+    // opacity: 0.6;
+    color: $colorTypoIcon;
+    background-color: $colorDisbledOn;
+    border: 1px solid $colorDisabled;
+  }
+}
+
+// Check Box , Radio Box
+.control {
+  display: block;
+  position: relative;
+  padding: 4px 14px;
+  cursor: pointer;
+  padding-left: 30px;
+
+  @include screenM {
+    padding-left: 30px;
+  }
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+
+    @include screenM {
+      top: 70%;
+    }
+  }
+}
+
+// Check Box
+.control--checkbox {
+  color: $colorTypoSubtext1;
+  @include fontSizeMD;
+  display: flex;
+  gap: 11px;
+  &.validate {
+    p {
+      &::after {
+        content: "*";
+        color: $colorError;
+      }
+    }
+  }
+  .control__indicator {
+    @include transitAnimate;
+    height: 20px;
+    width: 20px;
+    background-image: url(../img/ci/ico-checkbok.svg);
+
+    background-size: 100% 100%;
+
+    @include absoluteY {
+      left: 0px;
+    }
+  }
+  input:checked ~ .control__indicator {
+    background-image: url(../img/ci/ico-check.svg);
+  }
+
+  input:disabled ~ .control__indicator {
+    opacity: 0.6;
+  }
+
+  input:disabled ~ .control__indicator:after {
+    opacity: 0.6;
+  }
+}
+
+// Star select
+.bStarSelect {
+  .control-group {
+    display: flex;
+    gap: 8px;
+    .control {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      input:checked ~ .control__star {
+        background-color: #fcaf17;
+      }
+      .control__star {
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        @include mask("../img/ui/form/ico-single-star.svg");
+        background-color: #d0d5dd;
+      }
+    }
+  }
+}
+
+// Radio Box
+.control--radio {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: $colorTypoSubtext1;
+  flex-shrink: 0;
+  @include fontSizeMD;
+
+  .control__indicator {
+    @include transitAnimate;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: $colorWhite;
+    border: 1px solid $colorPrimaryOutline;
+    @include absoluteY {
+      left: 0;
+    }
+  }
+
+  &:hover input ~ .control__indicator,
+  input:focus ~ .control__indicator {
+    // border: 1px solid #cccccc;
+  }
+
+  input:checked ~ .control__indicator {
+    background-color: $colorBlue20;
+    border: 1px solid $colorPrimary;
+  }
+
+  input:checked ~ .control__indicator:after {
+    display: block;
+  }
+
+  &:hover input:not([disabled]):checked ~ .control__indicator,
+  input:checked:focus ~ .control__indicator {
+  }
+
+  .control__indicator:after {
+    content: "";
+    position: absolute;
+    display: none;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: $colorPrimary;
+    @include absoluteCenter;
+  }
+
+  input:disabled ~ .control__indicator {
+    opacity: 0.6;
+  }
+
+  input:disabled ~ .control__indicator:after {
+    opacity: 0.6;
+  }
+}
+
+// Select List
+.select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  > select {
+    display: inline-block;
+    cursor: pointer;
+    background: url(../img/ui/form/ico-arrow-select.svg) 95% center no-repeat;
+    @include inputStyle;
+    // color: #c4c4c4;
+    border: 1px solid $colorBorder;
+    // background-color: $colorBGInput;
+    padding-right: 48px;
+
+    @include transitAnimate;
+    line-height: normal;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:disabled {
+      color: $colorTypoIcon;
+      background-color: $colorDisbledOn;
+      border: 1px solid #ccd2f0;
+      // opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &:after {
+    @include absoluteY {
+      right: 0px;
+    }
+
+    @include screenM {
+      width: $inputHeight;
+    }
+  }
+}
+
+// Data List
+.datalist {
+  line-height: 33px;
+}
+
+datalist {
+  display: none;
+}
+
+/* specifically hide the arrow on focus */
+input::-webkit-calendar-picker-indicator {
+  display: none;
+  opacity: 0;
+}
+
+// Text Area
+textarea {
+  scrollbar-width: none;
+  height: 120px;
+  padding: 8px 16px;
+  border-bottom: 1px solid $colorBorder;
+  line-height: normal;
+  overflow: scroll;
+}
+
+// Input Date
+input[type="date"],
+input[type="month"],
+input[type="year"] {
+  @include inputStyle;
+
+  &:before {
+    content: "";
+    display: block;
+    z-index: 0;
+    right: 4px;
+    width: 32px;
+    height: 100%;
+    background: url(../img/ui/form/ico-calendar.svg) center center no-repeat;
+    @include absoluteY;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    display: block;
+    opacity: 1;
+    width: 32px;
+    height: 100%;
+    background: transparent;
+    @include absoluteY;
+    z-index: 1;
+    right: 0;
+  }
+  &::-webkit-date-and-time-value {
+    text-align: left;
+  }
+}
+
+// Password
+input[type="password"] {
+  padding-right: 36px;
+}
+
+.controlPass > input[type="text"] + a {
+  background: url(../img/ui/form/ico-visibility.svg) center center no-repeat;
+}
+.controlPass > input[type="password"] + a {
+  background: url(../img/ui/form/ico-invisible.svg) center center no-repeat;
+}
+.controlPass {
+  position: relative;
+  .btnshowPass {
+    @include absoluteY {
+      right: 7px;
+    }
+    color: $colorGray700;
+    width: $inputHeightM;
+    height: 100%;
+    overflow: hidden;
+    text-indent: -999px;
+    background: url(../img/ui/form/ico-invisible.svg) center center no-repeat;
+    @include screenM {
+      width: $inputHeight;
+    }
+
+    &:hover {
+      color: $colorPrimary;
+    }
+
+    &.show {
+      background-image: url(../img/ui/form/ico-visibility.svg);
+    }
+  }
+}
+
+// Consent PDPA
+.checkboxPDPA {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .control {
+    line-height: 28px;
+    // padding-left: 13px;
+    // top: -2px;
+    // @include screenM {
+    //   top: -4px;
+    // }
+
+    input {
+      top: 50%;
+    }
+  }
+
+  .bText {
+    a {
+      &:hover {
+        color: $colorSecondary;
+      }
+    }
+  }
+}
+
+// Captcha
+.bCaptcha {
+  margin-bottom: 25px;
+
+  > div {
+  }
+
+  > img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+
+    @include screenM {
+      width: 360px;
+    }
+  }
+}
+
+// Fancy Placeholder
+.inputPlaceholder {
+  position: relative;
+  background-color: $colorBGInput;
+  @include radius(8px);
+
+  span {
+    @include absoluteY;
+    @include fontSizeMD;
+    height: $inputHeightM;
+    line-height: $inputHeightM;
+    left: 16px;
+    color: $placeholderColor;
+    z-index: 0;
+    i.ico-cal {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(../img/ui/form/ico-calendar.svg) center center no-repeat;
+      transform: translateY(4px);
+      margin-right: 8px;
+    }
+  }
+  input {
+    background-color: transparent;
+    &::placeholder {
+      opacity: 0;
+      z-index: 1;
+    }
+    &:not(:placeholder-shown) {
+      background-color: $colorBGInput;
+      & ~ span {
+        display: none;
+      }
+    }
+  }
+}
+
+// Form Layout
+.bForm {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 24px;
+  @include screenM {
+    // grid-row-gap: 16px;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .bRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    @include screenM {
+      flex-direction: row;
+    }
+  }
+  .control-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    // margin-bottom: 20px;
+    .tValidate {
+      display: none;
+    }
+    [class*="tTitle"] {
+      padding: 0px !important;
+      text-align: start !important;
+      @include fontSizeXS;
+      color: $colorTypoSubtext1;
+      // margin-bottom: 5px;
+      @include screenS {
+        // @include fontSizeMD;
+      }
+      span {
+        display: inline;
+      }
+    }
+    &.validate {
+      [class*="tTitle"]:after {
+        content: "*";
+        color: $colorError;
+      }
+      .inputPlaceholder span {
+        &:after {
+          content: "*";
+          color: $colorError;
+        }
+      }
+    }
+    &.errIcon {
+      position: relative;
+      &::after {
+        content: "";
+        background-image: url(../img/ci/ico-errIcon.svg);
+        width: 13px;
+        height: 13px;
+        background-size: 100%;
+        right: 5%;
+        top: 50%;
+        position: absolute;
+      }
+    }
+    &.successIcon {
+      position: relative;
+      &::after {
+        content: "";
+        background-image: url(../img/ci/ico-successIcon.svg);
+        width: 13px;
+        height: 13px;
+        background-size: 100%;
+        right: 5%;
+        top: 45%;
+        position: absolute;
+      }
+    }
+
+    label.tInfo {
+      line-height: normal;
+      color: $colorGray600;
+    }
+
+    &.error {
+      .inputIcon {
+        position: relative;
+        &::after {
+          content: "";
+          background-image: url(../img/ci/ico-errIcon.svg);
+          width: 13px;
+          height: 13px;
+          background-size: 100%;
+          right: 10px;
+          top: 36%;
+          position: absolute;
+        }
+      }
+      input,
+      select,
+      textarea {
+        position: relative;
+        border-color: $colorErrorOutline;
+        color: $colorError;
+      }
+      label.tError {
+        color: $colorDiscountPrice;
+        @include fontSizeSM;
+        line-height: normal;
+        // margin-top: 8px;
+        display: flex;
+        &:before {
+          display: none;
+        }
+      }
+      label.tInfo {
+        display: none;
+      }
+      ::placeholder {
+        // text-align: center;
+        color: $colorError;
+      }
+      // .tValidate {
+      //   display: block;
+      //   [data-validate="1"] {
+      //     color: red;
+      //   }
+      //   [data-validate="2"] {
+      //     color: $colorSuccess;
+      //   }
+      // }
+    }
+    &.error ~ .tValidate {
+      display: block;
+      [data-validate="1"] {
+        color: red;
+      }
+      [data-validate="2"] {
+        color: $colorSuccess;
+      }
+    }
+
+    &.success {
+      .inputIcon {
+        position: relative;
+        &::after {
+          content: "";
+          background-image: url(../img/ci/ico-successIcon.svg);
+          width: 13px;
+          height: 13px;
+          background-size: 100%;
+          right: 10px;
+          top: 36%;
+          position: absolute;
+        }
+      }
+      input,
+      select,
+      textarea {
+        border-color: $colorSuccess;
+        color: $colorSuccess;
+      }
+      label.tSuccess {
+        display: flex;
+        &:before {
+          display: none;
+        }
+      }
+      label.tInfo {
+        display: none;
+      }
+      ::placeholder {
+        // text-align: center;
+        color: $colorSuccess;
+      }
+    }
+
+    &.pdpa {
+      p {
+        color: $colorTypoSubtext1;
+        @include fontSizeSM;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+    .gender {
+      width: 100%;
+      @include flex($jusCon: flex-start, $flxDirect: row);
+      gap: 16px;
+    }
+
+    > p {
+      @include fontSizeXS;
+      color: $colorGray500;
+    }
+  }
+
+  .tError {
+    display: none;
+    @include fontSizeXS;
+    color: $colorError;
+    font-weight: 300;
+    display: none;
+    align-items: center;
+    column-gap: 8px;
+    &:before {
+      content: "";
+      display: block;
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+      background: url(../img/ui/form/ico-error.svg) center center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &.error {
+    > .tError {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.tMarquee {
+  --gap: 1vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  > div {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: marqueeAnimate 15s linear infinite;
+    p {
+      font-style: italic;
+      color: #ffffff;
+      -webkit-text-stroke: 1px #739eda;
+      // font-size: 4em;
+      font-size: clamp(2.5em, 3.92vw, 4em);
+      background: #fff;
+      white-space: nowrap;
+      font-weight: 900;
+      text-transform: uppercase;
+      @include screenS {
+        -webkit-text-stroke-width: 2px;
+      }
+    }
+  }
+  &[data-direction="right"] {
+    > div {
+      animation-direction: reverse;
+    }
+  }
+  &[data-direction="left"] {
+    > div {
+      animation-direction: normal;
+    }
+  }
+  @keyframes marqueeAnimate {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+}

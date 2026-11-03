@@ -1,0 +1,209 @@
+.splide__pagination {
+  bottom: 5%;
+  width: 160px !important;
+  max-width: inherit !important;
+  column-gap: 0;
+  flex-wrap: nowrap;
+  @include container;
+  background: $colorStroke;
+  padding: 0;
+  @include radius(6px);
+  height: 6px;
+
+  li {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .splide__pagination__page {
+    width: 100%;
+    height: 6px;
+    margin: 0;
+    background: $colorStroke;
+
+    // box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    border: none;
+    border-radius: 0;
+    opacity: 1;
+    box-sizing: border-box;
+    @include transitAnimate;
+    &.is-active {
+      background: $colorPrimary;
+      opacity: 1;
+      transform: scale(1);
+      @include radius(6px);
+    }
+
+    &:hover {
+      background: $colorPrimary;
+    }
+  }
+}
+
+.splide__progress {
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.splide__progress__bar {
+  height: 2px;
+  background-color: $colorPrimary;
+}
+
+.splide__arrows {
+  position: absolute;
+  bottom: inherit;
+  top: 50%;
+  left: 0;
+  width: 100%;
+
+  .splide__arrow {
+    opacity: 1;
+    background: center center no-repeat;
+    background-size: auto 100%;
+    width: 32px;
+    height: 32px;
+    border-radius: inherit;
+    background-color: $colorPrimary;
+    position: relative;
+    @include radius(100px);
+
+    @include transitAnimate;
+    @include screenM {
+      width: 48px;
+      height: 48px;
+    }
+    &:after {
+      content: "";
+      display: block;
+      @include absoluteCenter;
+      width: 50%;
+      height: 50%;
+      background-color: $colorPrimaryOn;
+      background-size: 100%;
+      @include screenM{
+        width: 100%;
+        height: 100%;
+  
+      }
+    }
+    svg {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $colorPrimaryDark;
+    }
+    &:disabled {
+      background-color: #d2d6db;
+      &:after {
+        content: "";
+        display: block;
+        background-color: #9da4ae;
+      }
+    }
+
+    &.splide__arrow--prev {
+      &:after {
+        @include mask("../img/ui/slide/ico-arrow-slide-l.svg");
+      }
+    }
+
+    &.splide__arrow--next {
+      &:after {
+        @include mask("../img/ui/slide/ico-arrow-slide-r.svg");
+      }
+    }
+  }
+}
+
+.splide .bNumber {
+  display: table;
+  margin: 12px auto 0;
+  font-weight: bold;
+  background-color: $colorPrimary;
+  padding: 0 12px;
+  line-height: 30px;
+  color: #ffffff;
+  width: fit-content;
+
+  span {
+    display: inline;
+  }
+}
+
+.splide__sr {
+  display: none;
+}
+.splide__progress {
+  display: none;
+}
+
+// .bannerContent {
+//   &.pc {
+//     display: none;
+//   }
+//   &.pc-tablet {
+//     display: none;
+//   }
+//   &.mobile-tablet {
+//     display: block;
+//   }
+//   &.mobile {
+//     display: block;
+//   }
+//   @include screenM {
+//     &.pc {
+//       display: block;
+//     }
+//     &.pc-tablet {
+//       display: block;
+//     }
+//     &.mobile-tablet {
+//       display: none;
+//     }
+//     &.mobile {
+//       display: none;
+//     }
+//   }
+// }
+
+// Special Style
+@mixin slideSpecial {
+  .splide__slider {
+    @include grid(2, 32px, 32px);
+    .splide__arrows {
+      @include resetAbsolute;
+      display: flex;
+      justify-content: flex-end;
+      order: 3;
+      gap: 16px;
+      @include screenM {
+        gap: 32px;
+      }
+      > button {
+        @include resetAbsolute;
+      }
+    }
+    .splide__track {
+      grid-column: span 2;
+      .splide__slide {
+        opacity: 0.5;
+        &.is-active {
+          opacity: 1;
+        }
+      }
+    }
+    .splide__pagination {
+      bottom: 0;
+      position: relative;
+      order: 2;
+      margin: 0;
+      align-self: center;
+    }
+  }
+}

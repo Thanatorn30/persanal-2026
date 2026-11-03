@@ -1,0 +1,33 @@
+
+#pageStep{
+  @include flexCenter;
+  @include flexCenter(column);
+  display: flex;
+  gap: 4px;
+  .bStep{
+    // margin-top: 56px;
+    display: flex;
+    gap: 6px;
+    .step{
+      background-color: $colorPrimaryOutline;
+      width: 8px;
+      height: 8px;
+      @include radius(20px);
+      &.active{
+        background-color: $colorPrimary;
+      }
+    }
+  }
+  .mt-56{
+    margin-top: 56px;
+  }
+  .mt-24{
+    margin-top: 24px;
+  }
+  p{
+    color: $colorTypoSubtext2;
+    @include fontSizeXS;
+    font-weight: 300;
+  }
+  
+}

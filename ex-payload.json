@@ -1,0 +1,50 @@
+{
+  "firstName": "",
+  "lastName": "",
+  "position": "",
+  "lang": "",
+  "birthDate": "",
+  "address": "",
+  "lineId": "",
+  "email": "",
+  "telephone": "",
+  "resume_pdf": null,
+  "user_image": null,
+  "hardSkills": [
+    {
+      "lang": "th",
+      "hardSkill": ""
+    }
+  ],
+  "softSkills": [
+    {
+      "softSkill": ""
+    }
+  ],
+  "educations": [
+    {
+      "lang": "th",
+      "university": "",
+      "faculty": "",
+      "yearGraduated": "",
+      "degree": ""
+    }
+  ],
+  "workExperiences": [
+    {
+      "lang": "th",
+      "company": "",
+      "position": "",
+      "startDate": "",
+      "endDate": "",
+      "description": ""
+    }
+  ],
+  "portfolios": [
+    {
+      "lang": "th",
+      "link": "",
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+i[class^="ico-"]{
+  $sizeIcon: 32px;
+  display: block;
+  width: $sizeIcon;
+  height: $sizeIcon;
+  background-color: $colorPrimaryOn;
+  &[class*="fb"]{
+    -webkit-mask: url(../img/ci/social/ico-fb.svg) center
+    center no-repeat;
+  mask: url(../img/ci/social/ico-fb.svg) center center
+    no-repeat;
+  }
+  &[class*="line"]{
+    -webkit-mask: url(../img/ci/social/ico-line.svg) center
+    center no-repeat;
+  mask: url(../img/ci/social/ico-line.svg) center center
+    no-repeat;
+  }
+}

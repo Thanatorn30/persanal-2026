@@ -1,0 +1,1340 @@
+.compspecMenu {
+  @include screenM {
+    max-width: 320px !important;
+    width: 100%;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  height: 100%;
+  max-width: 100% !important;
+  padding: 32px 0px;
+  @include radius(12px);
+  //   background-image: url(../img/ci/profile/bg-profile.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+  .bProfile {
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .bImg {
+      padding: 12px;
+      margin-bottom: 8px;
+      width: 56px;
+      height: 56px;
+      @include radius(50px);
+      border: 1px solid #2448ff;
+      background-color: #ffffff;
+      box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1),
+        0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+      img {
+        width: 100%;
+      }
+    }
+    .tName {
+      @include fontSizeXL;
+    }
+    .tLink {
+      line-height: normal;
+      margin: 12px 0px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      &:after {
+        content: "";
+        background-image: url(../img/ci/profile/ico-arrow-right-black.svg);
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-size: 100%;
+      }
+    }
+    .bPoint {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      @include radius(16px);
+      padding: 12px 20px;
+      background-color: #fcfcfd;
+      border: 1px solid #ccd2f0;
+      .bHead {
+        .tBold {
+          font-size: 12px !important;
+        }
+        p:first-child {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          &:before {
+            content: "";
+            background-image: url(../img/ci/profile/ico-logo.svg);
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
+        }
+        p:last-child {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-weight: 600;
+          &:after {
+            content: "";
+            background-image: url(../img/ci/profile/ico-arrow-right.svg);
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
+        }
+      }
+      .bHead,
+      .tPoint {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tBold {
+          color: $colorPrimary;
+          @include fontSizeXL;
+          font-weight: 700;
+        }
+      }
+      .tPoint {
+        p {
+          color: $colorTypoSubtext2;
+          @include fontSizeXS;
+        }
+      }
+    }
+    .tExp {
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    .btnOpenMenu {
+      @include screenM {
+        display: none;
+      }
+      &.active {
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+      margin-top: 16px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      p {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        &:before {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: 100%;
+          background-image: url(../img/ui/menu/ico-burger.svg);
+        }
+      }
+      &:after {
+        content: "";
+        @include transitAnimate;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-size: 100%;
+        background-image: url(../img/ui/menu/ico-down-arrow.svg);
+      }
+    }
+  }
+  .bSideMenu {
+    // display: none;
+    @include screenM {
+      display: flex !important;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bTop {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .tText {
+        display: flex;
+        justify-content: center;
+        p {
+          @include fontSizeLG;
+          font-weight: 700;
+        }
+      }
+      .bBtn {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        a {
+          &.primary {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            @include fontSizeSM;
+            font-weight: 700;
+            color: #fcfcfd;
+            background: linear-gradient(45deg, #4300b1 0%, #a531dc 100%);
+            &:before {
+              content: "";
+              background: url(../img/ci/compspec/ico-magic-wand.svg);
+              width: 20px;
+              height: 20px;
+            }
+          }
+          &.outline {
+            @include fontSizeSM;
+            font-weight: 700;
+            color: #202c6a;
+            &:hover {
+              background: $colorSecondary;
+            }
+          }
+        }
+      }
+    }
+    .bMiddle {
+      .bCircuit {
+        margin-top: 36px;
+        display: flex;
+        height: 253px;
+        justify-content: center;
+        align-items: flex-start;
+        align-self: stretch;
+        .bFirst {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+          .bIcon {
+            text-align: center;
+            display: flex;
+            width: 60px;
+            padding: 0px 8px;
+            flex-direction: column;
+            align-items: center;
+            a {
+              &.cpupart {
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  background-size: 100%;
+                  background: url(../img/ci/compspec/part/cpu-part.svg);
+                  // background: url(../img/ci/compspec/part/active/cpu-active.svg);
+                }
+                &.active {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/active/cpu-active.svg);
+                  }
+                }
+                &.selected {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    // background: url(../img/ci/compspec/part/cpu-part.svg);
+                    background: url(../img/ci/compspec/part/selected/select-cpu.svg);
+                  }
+                }
+              }
+              &.vgapart {
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  background-size: 100%;
+                  background: url(../img/ci/compspec/part/vga-part.svg);
+                }
+                &.active {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/active/vga-active.svg);
+                  }
+                }
+                &.selected {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    // background: url(../img/ci/compspec/part/cpu-part.svg);
+                    background: url(../img/ci/compspec/part/selected/selected-vga.svg);
+                  }
+                }
+              }
+              &.rampart {
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  background-size: 100%;
+                  background: url(../img/ci/compspec/part/ram-part.svg);
+                }
+                &.active {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/active/ram-active.svg);
+                  }
+                }
+                &.selected {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/selected/selected-ram.svg);
+                  }
+                }
+              }
+              &.hddpart {
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  background-size: 100%;
+                  background: url(../img/ci/compspec/part/hdd-part.svg);
+                }
+                &.active {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/active/hdd-active.svg);
+                  }
+                }
+                &.selected {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/selected/selected-hdd.svg);
+                  }
+                }
+              }
+              &.ssdpart {
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  background-size: 100%;
+                  background: url(../img/ci/compspec/part/ssd-part.svg);
+                }
+                &.active {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/active/ssd-active.svg);
+                  }
+                }
+                &.selected {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/selected/selected-ssd.svg);
+                  }
+                }
+              }
+              &.coolingpart {
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  background-size: 100%;
+                  background: url(../img/ci/compspec/part/new-cpu.svg);
+                }
+                &.active {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/active/cooling-active.svg);
+                  }
+                }
+                &.selected {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/selected/selected-cooling.svg);
+                  }
+                }
+              }
+            }
+            p {
+              font-weight: 300;
+              @include fontSize2XS;
+              color: #475467;
+            }
+          }
+        }
+        .bSecond {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .bPic {
+            display: flex;
+            justify-content: center;
+          }
+          .bPart {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            .bIcon {
+              text-align: center;
+              display: flex;
+              width: 60px;
+              padding: 0px 8px;
+              flex-direction: column;
+              align-items: center;
+              a {
+                &.psupart {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/psu-part.svg);
+                  }
+                  &.active {
+                    &::after {
+                      content: "";
+                      display: block;
+                      width: 50px;
+                      height: 50px;
+                      background-size: 100%;
+                      background: url(../img/ci/compspec/part/active/psu-active.svg);
+                    }
+                  }
+                  &.selected {
+                    &:after {
+                      content: "";
+                      display: block;
+                      width: 50px;
+                      height: 50px;
+                      background-size: 100%;
+                      background: url(../img/ci/compspec/part/selected/selected-psu.svg);
+                    }
+                  }
+                }
+                &.mainboardpart {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/cpu-part.svg);
+                  }
+                  &.active {
+                    &:after {
+                      content: "";
+                      display: block;
+                      width: 50px;
+                      height: 50px;
+                      background-size: 100%;
+                      background: url(../img/ci/compspec/part/active/mainboard-active.svg);
+                    }
+                  }
+                  &.selected {
+                    &:after {
+                      content: "";
+                      display: block;
+                      width: 50px;
+                      height: 50px;
+                      background-size: 100%;
+                      background: url(../img/ci/compspec/part/selected/selected-mainboard.svg);
+                    }
+                  }
+                }
+                &.pcpart {
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 100%;
+                    background: url(../img/ci/compspec/part/pc-part.svg);
+                  }
+                  &.active {
+                    &:after {
+                      content: "";
+                      display: block;
+                      width: 50px;
+                      height: 50px;
+                      background-size: 100%;
+                      background: url(../img/ci/compspec/part/active/pc-active.svg);
+                    }
+                  }
+                  &.selected {
+                    &:after {
+                      content: "";
+                      display: block;
+                      width: 50px;
+                      height: 50px;
+                      background-size: 100%;
+                      background: url(../img/ci/compspec/part/selected/selected-pc.svg);
+                    }
+                  }
+                }
+              }
+              p {
+                font-weight: 300;
+                @include fontSize2XS;
+                color: #475467;
+              }
+            }
+          }
+        }
+      }
+      .bRecommendpsu {
+        margin-top: 24px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #d0d5dd;
+        .bPsu {
+          width: 100%;
+          display: flex;
+          height: 66px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 30px;
+          border: 1px solid #2c3d92;
+          background: linear-gradient(270deg, #fff0fe 0%, #e5f9ff 100%);
+          @include screenS {
+            width: 320px;
+          }
+          .bText {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            .tLeft {
+              width: 50%;
+              p {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-weight: 300;
+                gap: 8px;
+                @include fontSizeXS;
+                &:before {
+                  content: "";
+                  background: url(../img/ci/compspec/ico-electric.svg) center
+                    center no-repeat;
+                  background-size: auto 100%;
+                  width: 26px;
+                  height: 26px;
+                }
+              }
+            }
+            .tRight {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+              p {
+                &.eng {
+                  font-weight: 700;
+                  @include fontSizeXS;
+                }
+                &.th {
+                  font-weight: 300;
+                  @include fontSizeXS;
+                }
+              }
+            }
+          }
+        }
+      }
+      .bSelectService {
+        .bTitle {
+          padding: 24px 0px;
+        }
+        .bRadio {
+          padding: 16px;
+          border-bottom: 1px solid #d0d5dd;
+
+          .bCondition {
+            padding: 20px;
+            background: #f3f5fb;
+            color: #475467;
+            font-weight: 300;
+            font-size: 12px;
+            ul {
+              padding-left: 8px;
+              li {
+                list-style: disc;
+              }
+            }
+            .bHeadCondition {
+              padding-bottom: 8px;
+            }
+          }
+        }
+      }
+      .bPriceTotal {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #d0d5dd;
+        .bPrice {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .tLeft {
+            p {
+              @include fontSizeSM;
+              font-weight: 300;
+            }
+          }
+          .tRight {
+            p {
+              @include fontSizeSM;
+              font-weight: 700;
+              display: flex;
+              gap: 4px;
+              &::before {
+                content: "฿";
+              }
+            }
+          }
+        }
+        .bBtn {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          .btnFav {
+            a {
+              display: flex;
+              padding: 12px;
+              justify-content: center;
+              align-items: center;
+              border-radius: 8px;
+              border: 1px solid #2c3d92;
+              &:after {
+                content: "";
+                background-color: $colorPrimary;
+                @include mask("../img/ci/compspec/ico-heart.svg");
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-size: 100%;
+              }
+            }
+          }
+          .btnBuild {
+            width: 100%;
+            .bAction {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              .btnFav {
+                display: flex;
+                gap: 12px;
+              }
+            }
+            a {
+              font-weight: 700;
+              @include fontSizeSM;
+              &.disabled {
+                background: #ccd2f0;
+              }
+              &.btn {
+                width: 100%;
+                &:hover {
+                  background: $colorSecondary;
+                }
+              }
+            }
+          }
+        }
+      }
+      .bShare {
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        .bButtonShare {
+          font-weight: 300;
+          border-radius: 100px;
+          background: #f2f4f7;
+          box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+          display: flex;
+          gap: 16px;
+          align-items: center;
+          padding: 4px 20px;
+          justify-content: center;
+          .linkFacebook {
+            &::before {
+              content: url(../img/ci/social/ico-fb.svg);
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .linkX {
+            &::before {
+              content: url(../img/ci/social/ico-x.svg);
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .linkLine {
+            &::before {
+              content: url(../img/ci/social/ico-line.svg);
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+      .bCore {
+        padding: 48px 0px 48px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-bottom: 1px solid #d0d5dd;
+        .bText {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+
+          h3 {
+            @include fontSizeLG;
+            font-weight: 700;
+          }
+          a {
+            color: #0089e4;
+            text-decoration: underline;
+            font-weight: 700;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            &:hover {
+              color: $colorSecondary;
+            }
+            &:after {
+              content: "";
+              background-image: url(../img/ci/compspec/ico-reset.svg);
+              display: block;
+              width: 20px;
+              height: 20px;
+              background-size: 100%;
+            }
+          }
+        }
+        .bSelectComponent {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 20px 16px;
+          align-items: center;
+          border-radius: 12px;
+          border: 1px solid #d0d5dd;
+          background: #fcfcfd;
+          transition: border 0.3s ease, background 0.3s ease;
+          cursor: pointer;
+          .tHead {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            text-transform: uppercase;
+          }
+
+          .bBtnAdd {
+            padding-top: 16px;
+
+            a {
+              &.btnAddItem {
+                display: flex;
+                align-items: center;
+                font-weight: 700;
+                color: #2c3d92;
+                gap: 12px;
+                &:before {
+                  content: "";
+                  background-image: url(../img/ci/compspec/ico-plus.svg);
+                  display: block;
+                  width: 20px;
+                  height: 20px;
+                  background-size: 100%;
+                }
+              }
+            }
+          }
+          .bNoItem {
+            padding-top: 12px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            a {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              &:before {
+                content: "";
+                background-image: url(../img/ci/compspec/ico-plus.svg);
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-size: 100%;
+              }
+              color: #2c3d92;
+              font-weight: 700;
+              @include fontSizeMD;
+              text-transform: uppercase;
+            }
+          }
+          .bDisplay {
+            width: 100%;
+            padding-bottom: 10px;
+            .tNewHead {
+              padding-top: 10px;
+              text-transform: uppercase;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .tAmount {
+                color: #d0d5dd;
+                font-weight: 300;
+              }
+            }
+            .bDetail {
+              padding: 20px 0px 20px 0px;
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+
+              .bPic {
+                max-width: 60px;
+                max-height: 60px;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                }
+              }
+              .tDetail {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                p {
+                  @include fontSizeSM;
+                  font-weight: 300;
+                }
+                span {
+                  font-weight: 700;
+                  @include fontSizeMD;
+                  &::before {
+                    content: "฿";
+                  }
+                }
+              }
+            }
+            .bAction {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+
+              .bAdd {
+                display: flex;
+
+                a {
+                  &.minus {
+                    display: flex;
+                    padding: 8px;
+                    border: 1px solid #d0d5dd;
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    &.disabled {
+                      &::before {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        background-color: #bbbbbb;
+                        @include mask(
+                          "../img/ci/compspec/ico-normal-minus.svg"
+                        );
+                      }
+                    }
+                    &::before {
+                      content: "";
+                      width: 16px;
+                      height: 16px;
+                      background-color: #1d2939;
+                      @include mask("../img/ci/compspec/ico-normal-minus.svg");
+                    }
+                  }
+                  &.plus {
+                    display: flex;
+                    padding: 8px;
+                    border: 1px solid #d0d5dd;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+
+                    &::before {
+                      content: "";
+                      width: 16px;
+                      height: 16px;
+                      background-color: #1d2939;
+                      @include mask("../img/ci/compspec/ico-normal-plus.svg");
+                    }
+                    &.disabled {
+                      &::before {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        background-color: #bbbbbb;
+                        @include mask("../img/ci/compspec/ico-normal-plus.svg");
+                      }
+                    }
+                  }
+                }
+                p {
+                  &.amount {
+                    font-weight: 700;
+                    @include fontSizeSM;
+                    width: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 4px 8px;
+                    border: 1px solid #d0d5dd;
+                  }
+                }
+              }
+              .bDelete {
+                display: flex;
+                align-items: center;
+                a {
+                  &.btnDelete {
+                    &:before {
+                      content: "";
+                      @include mask("../img/ci/compspec/ico-trashcan.svg");
+                      background-color: #b42318;
+                      display: block;
+                      width: 20px;
+                      height: 20px;
+                      background-size: 100%;
+                      transform: scale(1);
+                      &:hover {
+                        transform: scale(3);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &.active {
+            border-top: 1px solid #2c3d92;
+            border-bottom: 1px solid #2c3d92;
+            border-left: 6px solid #2c3d92;
+            border-right: 6px solid #2c3d92;
+          }
+          @mixin icon($url) {
+            content: "";
+            background-image: url($url);
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+          }
+          a {
+            &.tText {
+              text-transform: uppercase;
+              @include fontSizeMD;
+              font-weight: 300;
+              display: flex;
+              flex-direction: row;
+              gap: 8px;
+              align-items: center;
+
+              &:after {
+                @include icon("../img/ci/compspec/info-circle.svg");
+              }
+              &.cpu {
+                &:before {
+                  @include icon("../img/ci/compspec/cpu.png");
+                }
+              }
+              &.mainboard {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-mainboard.svg");
+                }
+              }
+
+              &.vga {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-vga.svg");
+                }
+              }
+              &.ram {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-ram.svg");
+                }
+              }
+              &.storage {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-hdd.svg");
+                }
+              }
+              &.m2 {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-ssd.svg");
+                }
+              }
+              &.psu {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-psu.svg");
+                }
+              }
+              &.case {
+                &:before {
+                  background-repeat: no-repeat;
+                  height: 30px !important;
+                  @include icon("../img/ci/compspec/ico-cases.svg");
+                }
+              }
+              &.cooler {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-cooling.svg");
+                }
+              }
+            }
+          }
+        }
+      }
+      .bAccessories {
+        padding: 48px 0px 96px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .bText {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+
+          h3 {
+            @include fontSizeLG;
+            font-weight: 700;
+          }
+          a {
+            color: #0089e4;
+            text-decoration: underline;
+            font-weight: 700;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            &:hover {
+              color: $colorSecondary;
+            }
+            &:after {
+              content: "";
+              background-image: url(../img/ci/compspec/ico-reset.svg);
+              display: block;
+              width: 20px;
+              height: 20px;
+              background-size: 100%;
+            }
+          }
+        }
+        .bSelectComponent {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 20px 16px;
+          align-items: center;
+          border-radius: 12px;
+          border: 1px solid #d0d5dd;
+          background: #fcfcfd;
+          transition: border 0.3s ease, background 0.3s ease;
+
+          .tHead {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          .bBtnAdd {
+            padding-top: 16px;
+
+            a {
+              &.btnAddItem {
+                display: flex;
+                align-items: center;
+                font-weight: 700;
+                color: #2c3d92;
+                gap: 12px;
+                &:before {
+                  content: "";
+                  background-image: url(../img/ci/compspec/ico-plus.svg);
+                  display: block;
+                  width: 20px;
+                  height: 20px;
+                  background-size: 100%;
+                }
+              }
+            }
+          }
+          .bDisplay {
+            width: 100%;
+            .bDetail {
+              padding: 20px 0px 20px 0px;
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+
+              .bPic {
+                max-width: 60px;
+                max-height: 60px;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                }
+              }
+              .tDetail {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                p {
+                  @include fontSizeSM;
+                  font-weight: 300;
+                }
+                span {
+                  font-weight: 700;
+                  @include fontSizeMD;
+                  &::before {
+                    content: "฿";
+                  }
+                }
+              }
+            }
+            .bAction {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+
+              .bAdd {
+                display: flex;
+
+                a {
+                  &.minus {
+                    display: flex;
+                    padding: 8px;
+                    border: 1px solid #d0d5dd;
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    &.disabled {
+                      &::before {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        background-color: #bbbbbb;
+                        @include mask(
+                          "../img/ci/compspec/ico-normal-minus.svg"
+                        );
+                      }
+                    }
+                    &::before {
+                      content: "";
+                      width: 16px;
+                      height: 16px;
+                      background-color: #1d2939;
+                      @include mask("../img/ci/compspec/ico-normal-minus.svg");
+                    }
+                  }
+                  &.plus {
+                    display: flex;
+                    padding: 8px;
+                    border: 1px solid #d0d5dd;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+
+                    &::before {
+                      content: "";
+                      width: 16px;
+                      height: 16px;
+                      background: url(../img/ci/compspec/ico-normal-plus.svg);
+                    }
+                  }
+                }
+                p {
+                  &.amount {
+                    font-weight: 700;
+                    @include fontSizeSM;
+                    width: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 4px 8px;
+                    border: 1px solid #d0d5dd;
+                  }
+                }
+              }
+              .bDelete {
+                display: flex;
+                align-items: center;
+                a {
+                  &.btnDelete {
+                    &:before {
+                      content: "";
+                      @include mask("../img/ci/compspec/ico-trashcan.svg");
+                      background-color: #b42318;
+                      display: block;
+                      width: 20px;
+                      height: 20px;
+                      background-size: 100%;
+                      transform: scale(1);
+                      &:hover {
+                        transform: scale(3);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &.active {
+            border-top: 1px solid #2c3d92;
+            border-bottom: 1px solid #2c3d92;
+            border-left: 6px solid #2c3d92;
+            border-right: 6px solid #2c3d92;
+          }
+          @mixin icon($url) {
+            content: "";
+            background-image: url($url);
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
+          a {
+            &.tText {
+              @include fontSizeMD;
+              font-weight: 300;
+              display: flex;
+              flex-direction: row;
+              gap: 8px;
+              align-items: center;
+              &.monitor {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-monitor.svg");
+                }
+              }
+
+              &.keyboard {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-keyboard.svg");
+                }
+              }
+
+              &.mouse {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-mouse.svg");
+                }
+              }
+
+              &.headset {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-headphone.svg");
+                }
+              }
+              &.speaker {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-speaker.svg");
+                }
+              }
+              &.mic {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-microphone.svg");
+                }
+              }
+              &.ups {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-ups.svg");
+                }
+              }
+              &.webcam {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-webcam.svg");
+                }
+              }
+              &.software {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-software.svg");
+                }
+              }
+              &.gadget {
+                &:before {
+                  @include icon("../img/ci/compspec/ico-gadget.svg");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

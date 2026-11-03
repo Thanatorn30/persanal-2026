@@ -1,0 +1,315 @@
+.personalMenu {
+  @include screenM {
+    max-width: 250px !important;
+    width: 100%;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  height: 100%;
+  max-width: 100% !important;
+  padding: 32px 0px;
+  @include radius(12px);
+  background-image: url(../img/ci/profile/bg-profile.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+  .bProfile {
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .bImg {
+      padding: 12px;
+      margin-bottom: 8px;
+      width: 56px;
+      height: 56px;
+      @include radius(50px);
+      border: 1px solid #2448ff;
+      background-color: #ffffff;
+      box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1),
+        0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+      img {
+        width: 100%;
+      }
+    }
+    .tName {
+      @include fontSizeXL;
+    }
+    .tLink {
+      line-height: normal;
+      margin: 12px 0px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      &:after {
+        content: "";
+        background-image: url(../img/ci/profile/ico-arrow-right-black.svg);
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-size: 100%;
+      }
+    }
+    .bPoint {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      @include radius(16px);
+      padding: 12px 20px;
+      background-color: #fcfcfd;
+      border: 1px solid #ccd2f0;
+      .bHead {
+        .tBold {
+          font-size: 12px !important;
+        }
+        p:first-child {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          &:before {
+            content: "";
+            background-image: url(../img/ci/profile/ico-logo.svg);
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
+        }
+        p:last-child {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-weight: 600;
+          &:after {
+            content: "";
+            background-image: url(../img/ci/profile/ico-arrow-right.svg);
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
+        }
+      }
+      .bHead,
+      .tPoint {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tBold {
+          color: $colorPrimary;
+          @include fontSizeXL;
+          font-weight: 700;
+        }
+      }
+      .tPoint {
+        p {
+          color: $colorTypoSubtext2;
+          @include fontSizeXS;
+        }
+      }
+    }
+    .tExp {
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    .btnOpenMenu {
+      @include screenM {
+        display: none;
+      }
+      &.active {
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+      margin-top: 16px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      p {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        &:before {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: 100%;
+          background-image: url(../img/ui/menu/ico-burger.svg);
+        }
+      }
+      &:after {
+        content: "";
+        @include transitAnimate;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-size: 100%;
+        background-image: url(../img/ui/menu/ico-down-arrow.svg);
+      }
+    }
+  }
+  .bSideMenu {
+    display: none;
+    @include screenM {
+      display: flex !important;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bGroup {
+      border-bottom: 1px solid $colorPrimaryOutline;
+      .bList {
+        width: 100%;
+        padding: 16px 16px;
+        display: flex;
+        justify-content: space-between;
+        p {
+          @include fontSizeMD;
+          font-weight: 300;
+          color: $colorTypoSubtext2;
+          &.active {
+            @include fontSizeMD;
+            color: $colorPrimary;
+            font-weight: 700;
+          }
+        }
+        [class^="tList"] {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          &.active {
+            &:before {
+              content: "";
+              background-color: $colorPrimary;
+            }
+          }
+        }
+        .tList1 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-map.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList2 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-box.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList3 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-heart.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList4 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-screen.svg");
+
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList5 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-bag.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList6 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-star.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList7 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-reward.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList8 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-time.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList9 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-discount.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList10 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-edit.svg");
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tList11 {
+          &:before {
+            content: "";
+            background-color: $colorTypoSubtext2;
+            @include mask("../img/ci/menu/ico-logout.svg");
+            background-image: url(../img/ci/menu/ico-logout.svg);
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .tCount {
+          background-color: #d92d20;
+          max-width: 22px;
+          max-height: 22px;
+          min-width: 22px;
+          min-height: 22px;
+
+          padding: 2px 3px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include radius(30px);
+          p {
+            color: #ffffff;
+            @include fontSizeXS;
+          }
+        }
+      }
+    }
+    .bGroup:last-child {
+      border-bottom: none;
+    }
+  }
+}

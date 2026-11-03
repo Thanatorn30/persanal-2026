@@ -1,0 +1,56 @@
+//Accordian
+.bAccord {
+  // oldversion
+  // border-bottom: 1px solid $colorGray800;
+  border-bottom: 1px solid #d0d5dd;
+  padding: 16px 0;
+  &:last-child {
+    border: none;
+  }
+
+  .btnAccord {
+    cursor: pointer;
+    @include transitAnimate;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 24px;
+    @include fontSizeMD;
+    font-weight: 500;
+    @include screenS {
+      @include fontSizeLG;
+    }
+
+    &:after {
+      right: 10px;
+      @include arrow(10px, 2px, $colorPrimary, 45deg);
+      transform: rotate(225deg);
+      -webkit-transform: rotate(225deg);
+      -moz-transform: rotate(225deg);
+      -ms-transform: rotate(225deg);
+      -o-transform: rotate(225deg);
+    }
+
+    &.opened {
+      color: $colorSecondary;
+      border-bottom: 1px solid $colorGray800;
+      padding-bottom: 16px;
+      &:after {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+      }
+    }
+    &:hover {
+      color: $colorGray900;
+    }
+  }
+
+  .contentAccord {
+    display: none;
+    // margin-top: 12px;
+    padding: 16px 10px;
+  }
+}
