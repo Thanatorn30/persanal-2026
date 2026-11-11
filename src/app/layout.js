@@ -21,6 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body className={`${monaSans.variable} ${geistMono.variable}`}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
