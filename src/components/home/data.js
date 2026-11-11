@@ -1,5 +1,5 @@
 // ข้อมูลทั้งหมดของหน้า Home — แก้ข้อความ/ลิงก์/รูปได้ที่ไฟล์นี้ไฟล์เดียว
-// รูป (avatar / image) ถ้าเว้นว่างไว้ จะแสดง placeholder gradient แทน (วางรูปไว้ใน /public แล้วใส่ path เช่น "/assets/img/me.jpg")
+// รูป (avatar / image) ถ้าเว้นว่างไว้ จะแสดง placeholder gradient แทน (วางรูปไว้ใน /public แล้วใส่ path เช่น "/persanal-2026/assets/img/me.jpg")
 
 export const profile = {
   shortName: "Peet",
@@ -8,9 +8,9 @@ export const profile = {
   location: "Bangkok, Thailand",
   phone: "0982651433",
   email: "peet.thanatorn@gmail.com",
-  avatar: "/assets/img/ui/me/me.png",
+  avatar: "/persanal-2026/assets/img/ui/me/me.png",
   bio: "Full-stack developer who builds SaaS products end to end — B2C and B2B — from identifying the problem and designing features to launching a product with real, active users.",
-  cvUrl: "/assets/cv/cv-thanatorn.pdf",
+  cvUrl: "/persanal-2026/assets/cv/cv-thanatorn.pdf",
   portfolio: "alexcarter.dev",
 };
 
@@ -140,7 +140,7 @@ export const projects = [
     id: "worknest",
     name: "Hiveseat",
     title: "Seating management platform for weddings & events",
-    image: "/assets/img/projects/hiveseat/custom.png",
+    image: "/persanal-2026/assets/img/projects/hiveseat/custom.png",
     tone: ["#004d9b", "#007fff"],
     summary:
       "A SaaS that turns wedding seating from a stressful Excel exercise into a few clicks — build the floor plan, seat every guest, then let guests find their own table by scanning a QR code on the day.",
@@ -330,33 +330,33 @@ export const projects = [
         ],
         images: [
           {
-            src: "/assets/img/projects/hiveseat/auto.png",
+            src: "/persanal-2026/assets/img/projects/hiveseat/auto.png",
             caption:
               "Auto layout — enter guests, seats per table, columns and row break; the plan is calculated for you.",
           },
           {
             // TODO: ใส่ภาพหน้าตั้งค่า custom layout ที่ path นี้
-            src: "/assets/img/projects/hiveseat/custom-layout.png",
+            src: "/persanal-2026/assets/img/projects/hiveseat/custom-layout.png",
             caption:
               "Custom layout settings — add a table group with its type (round, Chinese or long), number of tables and seats per table, add stages, then drag each group into place over the uploaded background and export the plan as PNG.",
           },
           {
-            src: "/assets/img/projects/hiveseat/assign.png",
+            src: "/persanal-2026/assets/img/projects/hiveseat/assign.png",
             caption:
               "Click-to-seat — click a table on the plan, filter by group and pick guests.",
           },
           {
-            src: "/assets/img/projects/hiveseat/guests.png",
+            src: "/persanal-2026/assets/img/projects/hiveseat/guests.png",
             caption:
               "Excel import — duplicates are skipped and new guest groups are created automatically.",
           },
           {
-            src: "/assets/img/projects/hiveseat/checkin.png",
+            src: "/persanal-2026/assets/img/projects/hiveseat/checkin.png",
             caption:
               "Check-in — live attendance by group, with self check-in via QR and Excel export.",
           },
           {
-            src: "/assets/img/projects/hiveseat/qr.png",
+            src: "/persanal-2026/assets/img/projects/hiveseat/qr.png",
             caption:
               "Guest experience — scan the QR, search your name and see your table highlighted. (All screens are mock-ups with sample data.)",
           },
@@ -488,7 +488,7 @@ export const projects = [
     name: "PromptChex",
     title: "Attendance & payroll platform for small businesses, run through LINE",
     // ภาพทั้งหมดแคปจาก prompt-chex-fe-mock-data (โหมด mock ข้อมูลตัวอย่าง)
-    image: "/assets/img/projects/promptchex/cover.png",
+    image: "/persanal-2026/assets/img/projects/promptchex/cover.png",
     tone: ["#222222", "#0071e3"],
     summary:
       "A SaaS for Thai small businesses that replaces paper time sheets, LINE chat requests and Excel payroll. Employees check in, ask for leave and get their payslip inside LINE; the owner approves everything in one place and runs payroll in a few clicks.",
@@ -637,31 +637,31 @@ export const projects = [
         ],
         images: [
           {
-            src: "/assets/img/projects/promptchex/dashboard.png",
+            src: "/persanal-2026/assets/img/projects/promptchex/dashboard.png",
             caption: "Business overview — staff, attendance, leave and late counts for today, plus everything waiting for approval.",
           },
           {
-            src: "/assets/img/projects/promptchex/wage-setting.png",
+            src: "/persanal-2026/assets/img/projects/promptchex/wage-setting.png",
             caption: "Wage rules — monthly, half-monthly, daily and hourly pay with holiday and OT rates in one table.",
           },
           {
-            src: "/assets/img/projects/promptchex/check-in-out.png",
+            src: "/persanal-2026/assets/img/projects/promptchex/check-in-out.png",
             caption: "Check-in & out — on-time, late and absent at a glance, with approve, reject and check in on behalf of an employee.",
           },
           {
-            src: "/assets/img/projects/promptchex/leave-absent.png",
+            src: "/persanal-2026/assets/img/projects/promptchex/leave-absent.png",
             caption: "Leave requests — filter by status and branch, approve or reject in one click.",
           },
           {
-            src: "/assets/img/projects/promptchex/salary.png",
+            src: "/persanal-2026/assets/img/projects/promptchex/salary.png",
             caption: "Payroll period — calculated pay for every employee, ready to review and send as payslips to LINE.",
           },
           {
-            src: "/assets/img/projects/promptchex/payslip.png",
+            src: "/persanal-2026/assets/img/projects/promptchex/payslip.png",
             caption: "Payslip — earnings, deductions and net pay, with tabs for attendance, OT, tax, advances and leave.",
           },
           {
-            src: "/assets/img/projects/promptchex/line-apps.png",
+            src: "/persanal-2026/assets/img/projects/promptchex/line-apps.png",
             caption:
               "LINE apps — employee without shifts, employee with morning and overnight shifts, and the owner’s LINE dashboard. (All screens use sample data.)",
             wide: true,
