@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import RollText from "@/components/common/RollText/RollText";
 import Button from "@/components/common/Button/Button";
 import { navLinks, profile } from "../data";
@@ -24,7 +25,7 @@ export default function Navbar() {
   return (
     <Bar>
       <Inner>
-        <Logo href="/#home" className="roll-host" onClick={close}>
+        <Logo as={Link} href="/#home" className="roll-host" onClick={close}>
           <RollText lineHeight="1.3em">{profile.shortName}</RollText>
           <sup>®</sup>
         </Logo>
@@ -32,7 +33,7 @@ export default function Navbar() {
         <Links>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <NavLink href={link.href} className="roll-host">
+              <NavLink as={Link} href={link.href} className="roll-host">
                 <RollText>{link.label}</RollText>
               </NavLink>
             </li>
@@ -59,7 +60,7 @@ export default function Navbar() {
 
       <MobileMenu $open={open}>
         {navLinks.map((link, i) => (
-          <MobileLink key={link.href} href={link.href} $open={open} $delay={0.05 * i + 0.1} onClick={close}>
+          <MobileLink as={Link} key={link.href} href={link.href} $open={open} $delay={0.05 * i + 0.1} onClick={close}>
             {link.label}
           </MobileLink>
         ))}

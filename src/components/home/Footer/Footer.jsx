@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/common/Reveal/Reveal";
 import Button from "@/components/common/Button/Button";
 import RollText from "@/components/common/RollText/RollText";
@@ -23,7 +24,7 @@ function LinkColumn({ title, links }) {
     <Column>
       <ColTitle>{title}</ColTitle>
       {links.map((link) => (
-        <FooterLink key={link.label} href={link.href} className="roll-host">
+        <FooterLink as={Link} key={link.label} href={link.href} className="roll-host">
           <RollText>{link.label}</RollText>
         </FooterLink>
       ))}
