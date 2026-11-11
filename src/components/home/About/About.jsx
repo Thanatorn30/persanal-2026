@@ -26,6 +26,7 @@ import {
   Period,
   EntryTitle,
   EntryText,
+  EntryPoints,
 } from "./About.styles";
 
 function EntryList({ items }) {
@@ -37,6 +38,13 @@ function EntryList({ items }) {
             <Period>{item.period}</Period>
             <EntryTitle>{item.company || item.title}</EntryTitle>
             <EntryText>{item.detail}</EntryText>
+            {item.points?.length > 0 && (
+              <EntryPoints>
+                {item.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </EntryPoints>
+            )}
           </Entry>
         ))}
       </Stack>
@@ -75,17 +83,7 @@ export default function About() {
         <TimelineRow tag="About my self">
           <Card>
             <Text>{about.text}</Text>
-            <Links>
-              <InfoItem mono icon={<FileDownloadOutlinedIcon />} href={profile.cvUrl}>
-                Download CV
-              </InfoItem>
-              <InfoItem mono icon={<LanguageOutlinedIcon />} href={`https://${profile.portfolio}`}>
-                {`Portfolio: ${profile.portfolio}`}
-              </InfoItem>
-              <InfoItem mono icon={<MailOutlineIcon />} href={`mailto:${profile.email}`}>
-                {profile.email}
-              </InfoItem>
-            </Links>
+           
             <Stats>
               {about.stats.map((stat) => (
                 <div key={stat.label}>

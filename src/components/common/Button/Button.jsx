@@ -31,7 +31,7 @@ export default function Button({
       {...props}
     >
       {icon}
-      <RollText>{children}</RollText>
+      {children}
     </StyledButton>
   );
 }

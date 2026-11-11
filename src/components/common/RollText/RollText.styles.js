@@ -17,7 +17,8 @@ export const Track = styled.span`
   transition: transform 0.5s ${ease};
 
   .roll-host:hover & {
-    transform: translateY(-50%);
+    color: #252525;
+    
   }
 `;
 

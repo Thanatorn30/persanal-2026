@@ -19,11 +19,11 @@ export default function HomePage() {
       <Hero />
       <About />
       <Projects />
-      <Services />
-      <Pricing />
-      <Testimonials />
-      <Faq />
-      <Contact />
+      {/* <Services /> */}
+      {/* <Pricing /> */}
+      {/* <Testimonials /> */}
+      {/* <Faq /> */}
+      {/* <Contact /> */}
       <Footer />
     </PageFrame>
   );

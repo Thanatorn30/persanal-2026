@@ -127,3 +127,33 @@ export const EntryText = styled.p`
   line-height: 1.6;
   color: ${colors.muted};
 `;
+
+// bullet รายละเอียดใต้แต่ละประสบการณ์ (item.points)
+export const EntryPoints = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    font-family: ${fonts.sans};
+    font-size: 14px;
+    line-height: 1.6;
+    color: ${colors.muted};
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.68em;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: ${colors.muted};
+  }
+`;

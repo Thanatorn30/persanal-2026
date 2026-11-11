@@ -10,16 +10,12 @@ export default function Projects() {
     <Section id="projects" tag="Project">
       <Grid>
         {projects.map((project, i) => (
-          <Reveal key={project.name} delay={(i % 2) * 0.1}>
+          <Reveal key={project.id} delay={(i % 2) * 0.1}>
             <ProjectCard {...project} />
           </Reveal>
         ))}
       </Grid>
-      <More>
-        <Reveal>
-          <Button href="#projects">See all project</Button>
-        </Reveal>
-      </More>
+      
     </Section>
   );
 }

@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { colors, fonts, ease, media } from "@/styles/theme";
 
 export const CardLink = styled.a`
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 12px 12px 16px 12px;
   display: block;
   color: ${colors.text};
 
@@ -10,9 +13,15 @@ export const CardLink = styled.a`
   }
 `;
 
+// สัดส่วนเท่ากับภาพปกโปรเจกต์ (2100×1350 = 14:9) ภาพจึงเต็มกรอบพอดี ไม่มีขอบว่าง
 export const Media = styled.div`
   position: relative;
-  aspect-ratio: 560 / 594;
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.6s ${ease}; */
+
+ 
+  width: 100%;
+  aspect-ratio: 14 / 9;
   border-radius: 10px;
   overflow: hidden;
   background: ${colors.surface};
@@ -40,11 +49,15 @@ export const Image = styled.div`
 
 // mockup อุปกรณ์แบบ CSS ใช้เป็น placeholder เมื่อยังไม่มีรูปจริง
 export const Device = styled.div`
-  width: 42%;
+  height: 78%;
   aspect-ratio: 9 / 19;
   border: 6px solid rgba(255, 255, 255, 0.85);
   border-radius: 34px;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.35));
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(0, 0, 0, 0.35)
+  );
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
   transform: rotate(-18deg);
   transition: transform 0.9s ${ease};
@@ -64,11 +77,13 @@ export const View = styled.span`
   width: 44px;
   height: 44px;
   border-radius: 100%;
-  background: ${colors.white};
-  color: ${colors.text};
+  background: #222222;
+  color: #ffffff;
   opacity: 0;
   transform: scale(0.6) rotate(-45deg);
-  transition: opacity 0.4s ${ease}, transform 0.5s ${ease};
+  transition:
+    opacity 0.4s ${ease},
+    transform 0.5s ${ease};
 
   ${CardLink}:hover & {
     opacity: 1;

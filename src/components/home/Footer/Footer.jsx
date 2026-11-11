@@ -44,14 +44,16 @@ export default function Footer() {
         <Reveal>
           <Intro>
             <Headline>{footer.headline}</Headline>
-            <Button href="#contact">Book a free call</Button>
+            <Button href={profile.cvUrl} download>
+              Download CV
+            </Button>
           </Intro>
         </Reveal>
         <Reveal delay={0.1}>
           <Columns>
             <LinkColumn title="Menu" links={footer.menu} />
             <LinkColumn title="Contact" links={contactLinks} />
-            <LinkColumn title="Social" links={footer.social} />
+            {/* <LinkColumn title="Social" links={footer.social} /> */}
           </Columns>
         </Reveal>
       </Top>

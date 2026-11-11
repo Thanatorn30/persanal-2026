@@ -35,7 +35,6 @@ export const StyledButton = styled.a`
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
-  transition: transform 0.4s ${ease}, opacity 0.3s;
   ${(p) => variants[p.$variant] || variants.dark}
 
   &:hover {
@@ -43,9 +42,7 @@ export const StyledButton = styled.a`
     ${(p) => variants[p.$variant] || variants.dark}
   }
 
-  &:active {
-    transform: scale(0.97);
-  }
+  
 
   &:disabled {
     opacity: 0.6;

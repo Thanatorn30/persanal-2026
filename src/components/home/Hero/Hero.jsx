@@ -74,11 +74,7 @@ export default function Hero() {
           <Bio>{profile.bio}</Bio>
         </Reveal>
 
-        <Reveal onLoad delay={0.5}>
-          <Actions>
-            <Button href="#contact">Book a free call</Button>
-          </Actions>
-        </Reveal>
+       
       </Center>
 
       {/* <Reveal onLoad delay={0.7}>

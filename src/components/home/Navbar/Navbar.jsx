@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <Bar>
       <Inner>
-        <Logo href="#home" className="roll-host" onClick={close}>
+        <Logo href="/#home" className="roll-host" onClick={close}>
           <RollText lineHeight="1.3em">{profile.shortName}</RollText>
           <sup>®</sup>
         </Logo>
@@ -39,7 +39,7 @@ export default function Navbar() {
           ))}
         </Links>
 
-        <Cta href={profile.cvUrl} className="roll-host">
+        <Cta href={profile.cvUrl} download className="roll-host">
           <OnlineDot />
           <RollText>Download CV</RollText>
         </Cta>
@@ -64,7 +64,7 @@ export default function Navbar() {
           </MobileLink>
         ))}
         <MobileCta>
-          <Button href={profile.cvUrl} fullWidth onClick={close}>
+          <Button href={profile.cvUrl} download fullWidth onClick={close}>
             Download CV
           </Button>
         </MobileCta>
